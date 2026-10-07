@@ -1,4 +1,3 @@
-import CtaLinks from "./CtaLinks";
 import SectionHead from "./SectionHead";
 import styles from "./Comparison.module.css";
 
@@ -15,14 +14,28 @@ const ROWS: Row[] = [
 
 export default function Comparison() {
   return (
-    <section className="section" id="merah">
+    <section className="section" id="identity" aria-labelledby="identity-title">
       <SectionHead
-        eyebrow="05 · Hermes is blue. We're red."
-        title="Same inspiration."
-        emphasis="Different direction."
+        id="identity-title"
+        eyebrow="06 · Identity"
+        title="Hermes is blue."
+        emphasis="We're red."
       />
+      <div className="prose">
+        <p>
+          Neovarch Agent shares DNA with Hermes Agent—same agent reasoning, same tool ecosystem, same
+          persistent memory—but diverges in identity and execution philosophy.
+        </p>
+        <p>
+          Where Hermes emphasizes breadth and flexibility, Neovarch emphasizes control and craft.
+          Built for technical professionals who want an AI workforce they can direct, debug, and
+          deploy without compromise.
+        </p>
+        <p>Open-source core. MIT license. Community-driven roadmap.</p>
+      </div>
       <div className={`${styles.compare} card-surface`}>
         <table className={styles.table}>
+          <caption className={styles.srOnlyCaption}>Hermes Agent compared with Neovarch Agent</caption>
           <thead>
             <tr>
               <td className={styles.srOnly} />
@@ -50,14 +63,6 @@ export default function Comparison() {
           </tbody>
         </table>
       </div>
-      <aside className={styles.callout} aria-label="Get started">
-        <p className={`${styles.calloutHead} x-mono`}>Get started</p>
-        <p className={styles.calloutLead}>
-          <strong>Open the repo. Install on your PC. Pair your phone.</strong> The Android APK lives
-          in the same repo.
-        </p>
-        <CtaLinks />
-      </aside>
     </section>
   );
 }

@@ -3,8 +3,12 @@
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
   gap: 16px;
 }
-/* Exactly four cards: a 2 x 2 grid until phone width. */
-.four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+/* Exactly four cards: four columns on desktop, 2 x 2 on tablet, stacked on phone. */
+.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.four .card { padding: 20px 18px; }
+@media (max-width: 1040px) {
+  .four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 
 .card {
   padding: 22px 24px;
@@ -26,6 +30,14 @@
 .list { margin: 0; padding: 0; list-style: none; }
 .list li { padding: 10px 0; border-bottom: 1px solid var(--stroke-secondary); }
 .list li:last-child { border-bottom: 0; padding-bottom: 0; }
+
+.note {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--stroke-secondary);
+  color: var(--text-secondary);
+  font-size: var(--size-small);
+}
 
 @media (max-width: 900px) {
   .cards:not(.four) { grid-template-columns: 1fr; }

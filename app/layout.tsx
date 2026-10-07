@@ -25,9 +25,9 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Neovarch Agent · Your personal AI office",
+  title: "Neovarch Agent — AI Workforce Under Your Command",
   description:
-    "Your personal AI office: agent “employees” that code, research and write posts. Run it all from your phone.",
+    "Neovarch Agent: Open-source AI agent platform. Autonomous coding, research, and task execution controlled from your phone. Local inference, zero cloud dependency.",
 };
 
 export const viewport: Viewport = {

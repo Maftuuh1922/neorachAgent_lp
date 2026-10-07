@@ -1,8 +1,9 @@
 import Hero from "@/components/Hero";
-import WhatItIs from "@/components/WhatItIs";
+import Concept from "@/components/Concept";
+import Setup from "@/components/Setup";
 import Features from "@/components/Features";
 import HowItWorks from "@/components/HowItWorks";
-import SharedOffice from "@/components/SharedOffice";
+import Collaboration from "@/components/Collaboration";
 import Comparison from "@/components/Comparison";
 import Footer from "@/components/Footer";
 
@@ -11,10 +12,11 @@ export default function Home() {
     <div className="page" id="top">
       <main className="main">
         <Hero />
-        <WhatItIs />
+        <Concept />
+        <Setup />
         <Features />
         <HowItWorks />
-        <SharedOffice />
+        <Collaboration />
         <Comparison />
       </main>
       <Footer />

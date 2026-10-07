@@ -5,18 +5,17 @@ import styles from "./Hero.module.css";
 
 export default function Hero() {
   return (
-    <section className={styles.hero}>
+    <section className={styles.hero} aria-labelledby="hero-title">
       <div className={styles.copy}>
-        <p className={styles.eyebrow}>by NEOVARCHLABS · Android &amp; iOS</p>
-        <h1 className={styles.wordmark} aria-label="Neovarch Agent">
+        <h1 id="hero-title" className={styles.wordmark} aria-label="Neovarch Agent">
           <span>Neovarch</span>
           <span>Agent</span>
         </h1>
         <span className={styles.rule} aria-hidden="true" />
-        <p className={styles.sub}>One office. Many agents. You&apos;re the boss.</p>
+        <p className={styles.sub}>The office runs itself. You just give orders.</p>
         <p className={styles.meta}>
-          Your personal AI office: agent “employees” that code, research and write posts. Run it all
-          from your phone.
+          Your personal AI workforce: agents that code, research, and ship—all controlled from your
+          phone. The brain lives on your PC. The remote lives in your pocket.
         </p>
         <CtaLinks />
       </div>
@@ -32,7 +31,7 @@ export default function Hero() {
             fetchPriority="high"
           />
         </div>
-        <figcaption className={styles.credit}>FIG.00 — Neovarch</figcaption>
+        <figcaption className={styles.credit}>FIG.00 — Architecture: PC brain, mobile remote</figcaption>
       </figure>
     </section>
   );

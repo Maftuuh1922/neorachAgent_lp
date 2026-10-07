@@ -8,29 +8,54 @@ type Step = { num: string; eyebrow: string; title: string; body: ReactNode };
 const STEPS: Step[] = [
   {
     num: "01",
-    eyebrow: "On your PC",
+    eyebrow: "Install",
     title: "Run Neovarch on your PC",
-    body: "Windows or Linux. This is where the agent core does its work.",
+    body: (
+      <p>
+        Windows, Linux, or macOS. This is where the agent core executes: file operations, terminal
+        access, web research, code generation.
+      </p>
+    ),
   },
   {
     num: "02",
-    eyebrow: "Once",
-    title: "Scan a QR to pair your phone",
-    body: "Do it once. Your phone is wired into your office.",
+    eyebrow: "Pair",
+    title: "Scan QR to pair your phone",
+    body: (
+      <p>
+        One-time setup. Your phone becomes the remote control. Secure pairing, encrypted
+        communication.
+      </p>
+    ),
   },
   {
     num: "03",
-    eyebrow: "From your phone",
+    eyebrow: "Command",
     title: "Give orders from anywhere",
-    body: "Tell your agents to code, research or write posts.",
+    body: (
+      <>
+        <ul className={styles.orders} aria-label="Example orders">
+          <li>&ldquo;Deploy the staging branch.&rdquo;</li>
+          <li>&ldquo;Research competitors and draft a comparison doc.&rdquo;</li>
+          <li>&ldquo;Write a blog post about the latest release.&rdquo;</li>
+        </ul>
+        <p>Your agents parse intent, break it into tasks, and execute autonomously.</p>
+      </>
+    ),
   },
   {
     num: "04",
-    eyebrow: "Automatic",
+    eyebrow: "Results",
     title: "Results saved and synced",
     body: (
       <>
-        Cloud sync via Supabase or Google Drive. <span className="chip">Soon</span>
+        <p>
+          All artifacts—code, documents, research—saved locally. Optional cloud sync via Supabase
+          or Google Drive.
+        </p>
+        <p className={styles.soon}>
+          Coming soon: real-time multi-device sync.
+        </p>
       </>
     ),
   },
@@ -38,9 +63,10 @@ const STEPS: Step[] = [
 
 export default function HowItWorks() {
   return (
-    <section className="section" id="cara">
+    <section className="section" id="workflow" aria-labelledby="workflow-title">
       <SectionHead
-        eyebrow="03 · How it works"
+        id="workflow-title"
+        eyebrow="04 · Workflow"
         title="Four steps."
         emphasis="Then you just give orders."
       />
@@ -49,23 +75,22 @@ export default function HowItWorks() {
         alt="A girl with a halo on a rooftop, her phone cabled to the PC core of a kneeling mecha"
         width={1024}
         height={1024}
-        fig="FIG.02 — The remote"
-        note="PC brain · phone remote"
+        caption="FIG.02 — Workflow: Install → Pair → Command → Results"
       />
-      <div className={styles.steps}>
+      <ol className={styles.steps}>
         {STEPS.map((step) => (
-          <article key={step.num} className={`${styles.step} card-surface`}>
-            <div className={styles.intro}>
+          <li key={step.num} className={`${styles.step} card-surface`}>
+            <div className={styles.intro} aria-hidden="true">
               <p className={styles.num}>{step.num}</p>
               <p className={`${styles.eyebrow} x-mono`}>{step.eyebrow}</p>
             </div>
-            <div>
+            <div className={styles.body}>
               <h3 className={styles.title}>{step.title}</h3>
-              <p>{step.body}</p>
+              {step.body}
             </div>
-          </article>
+          </li>
         ))}
-      </div>
+      </ol>
     </section>
   );
 }

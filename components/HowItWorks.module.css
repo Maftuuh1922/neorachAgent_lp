@@ -1,4 +1,7 @@
 .steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
@@ -37,4 +40,23 @@
 }
 @media (max-width: 760px) {
   .num { font-size: 48px; }
+}
+
+.body { display: grid; gap: 10px; align-content: start; }
+.body .title { margin-bottom: 2px; }
+.orders {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 12px;
+  border-left: 2px solid var(--red);
+  display: grid;
+  gap: 6px;
+  font-family: var(--x-serif);
+  font-style: italic;
+  font-size: 19px;
+  line-height: 1.2;
+}
+.soon {
+  font-weight: var(--weight-medium);
+  color: var(--x-red-text);
 }

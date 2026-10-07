@@ -3,44 +3,56 @@ import CardGrid, { type Card } from "./CardGrid";
 
 const FEATURES: Card[] = [
   {
-    label: "Work",
-    title: "Orders become tasks",
+    label: "WORK",
+    title: "Orders become execution",
     items: [
-      "Streaming chat with live tool activity",
-      "A task Kanban your agents can execute",
-      "Multi-agent meetings with minutes & action items",
-      "Scheduled prompts (cron)",
+      "Real-time streaming chat with live tool activity",
+      "Task board: agents execute from a shared queue",
+      "Multi-agent collaboration with meeting logs & action items",
+      "Scheduled automation via natural-language cron",
     ],
   },
   {
-    label: "Staff",
+    label: "STAFF",
     title: "Agents that remember",
     items: [
-      "Agent profiles + persistent memory & sessions",
-      "Skills and a file browser",
-      "Voice input & TTS",
+      "Agent profiles with persistent memory across sessions",
+      "Self-generated skills library",
+      "File browser with project context",
+      "Voice input & text-to-speech output",
     ],
   },
   {
-    label: "Models",
-    title: "Any provider",
-    items: ["OpenRouter", "Nous Portal", "OpenAI", "Local Ollama / LM Studio"],
+    label: "MODELS",
+    title: "Any provider, any model",
+    items: [
+      "OpenRouter (200+ models)",
+      "Nous Portal",
+      "OpenAI Platform",
+      "Local inference: Ollama, LM Studio, vLLM",
+    ],
   },
   {
-    label: "Look",
+    label: "INTERFACE",
     title: "An office that's yours",
-    items: ["Isometric office view", "Light/dark themes", "Indonesian-language UI"],
+    items: [
+      "Isometric office visualization",
+      "Light/dark themes",
+      "Multi-language UI (English, Indonesian)",
+      "Customizable workspace layout",
+    ],
   },
 ];
 
 export default function Features() {
   return (
-    <section className="section" id="fitur">
+    <section className="section" id="features" aria-labelledby="features-title">
       <SectionHead
-        eyebrow="02 · Features"
+        id="features-title"
+        eyebrow="03 · Features"
         title="Everything an office needs."
         emphasis="Nothing it doesn't."
-        sub="Ten features, grouped by job."
+        sub="Ten capabilities, organized by function."
       />
       <CardGrid cards={FEATURES} />
     </section>

@@ -7,14 +7,12 @@ type Props = {
   alt: string;
   width: number;
   height: number;
-  /** Left caption, rendered in crimson, e.g. "FIG.01 — The office". */
-  fig: string;
-  /** Right caption, muted. */
-  note: string;
+  /** Full mono caption, e.g. "FIG.01 — The office: …". */
+  caption: string;
 };
 
 /** Big framed artwork panel with a mono FIG caption. */
-export default function ArtFigure({ src, alt, width, height, fig, note }: Props) {
+export default function ArtFigure({ src, alt, width, height, caption }: Props) {
   return (
     <figure className={styles.art}>
       <Image
@@ -27,8 +25,7 @@ export default function ArtFigure({ src, alt, width, height, fig, note }: Props)
         loading="eager"
       />
       <figcaption className={`${styles.caption} x-mono`}>
-        <b>{fig}</b>
-        <span>{note}</span>
+        <b>{caption}</b>
       </figcaption>
     </figure>
   );
