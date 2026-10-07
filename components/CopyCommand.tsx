@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Check, Copy, Terminal } from "lucide-react";
+import { Check, Copy } from "lucide-react";
 
 export default function CopyCommand({ command }: { command: string }) {
   const [copied, setCopied] = useState(false);
@@ -27,11 +27,15 @@ export default function CopyCommand({ command }: { command: string }) {
 
   return (
     <div className="cmd">
-      <Terminal size={16} aria-hidden="true" className="cmd__icon" />
-      <code className="cmd__text mono">{command}</code>
-      <button type="button" className="cmd__copy" onClick={copy} aria-label={copied ? "Copied install command" : "Copy install command"}>
-        {copied ? <Check size={16} aria-hidden="true" /> : <Copy size={16} aria-hidden="true" />}
-        <span>{copied ? "Copied" : "Copy"}</span>
+      <code className="cmd__text mono">
+        <span className="term__p" aria-hidden="true">
+          $
+        </span>{" "}
+        {command}
+      </code>
+      <button type="button" className="cmd__copy mono" onClick={copy} aria-label={copied ? "Copied install command" : "Copy install command"}>
+        {copied ? <Check size={14} aria-hidden="true" /> : <Copy size={14} aria-hidden="true" />}
+        <span>{copied ? "COPIED" : "COPY"}</span>
       </button>
       <span className="sr-only" aria-live="polite">
         {copied ? "Install command copied to clipboard" : ""}

@@ -1,46 +1,50 @@
 import Image from "next/image";
 import { asset } from "@/lib/site";
 
-type SectionProps = {
-  id: string;
-  label: string;
-  heading: string;
-  className?: string;
-  children: React.ReactNode;
-};
-
-/** Semantic section with the "0X · NAME" label and H2 heading. */
-export function Section({ id, label, heading, className, children }: SectionProps) {
+/** Full-width hairline + running mono header, like the folio line of a printed page. Decorative. */
+export function RunHead({ num, name, fig }: { num: string; name: string; fig: string }) {
   return (
-    <section id={id} className={`section ${className ?? ""}`} aria-labelledby={`${id}-title`}>
-      <div className="container">
-        <p className="label" data-reveal>
-          {label}
-        </p>
-        <h2 id={`${id}-title`} className="heading" data-reveal>
-          {heading}
-        </h2>
-        {children}
+    <div className="run" aria-hidden="true">
+      <div className="run__inner container mono">
+        <span>NEOVARCH AGENT</span>
+        <span className="run__mid">
+          {num} / {name}
+        </span>
+        <span>{fig}</span>
       </div>
-    </section>
+    </div>
   );
 }
 
-type FigProps = {
+/** Oversized section numeral set in the margin. Decorative. */
+export function Num({ n, className }: { n: string; className?: string }) {
+  return (
+    <span className={`num ${className ?? ""}`} aria-hidden="true">
+      {n}
+    </span>
+  );
+}
+
+type PlateProps = {
   src: string;
   alt: string;
   caption: string;
   className?: string;
+  sizes?: string;
 };
 
-/** Framed duotone artwork with a mono FIG caption. */
-export function Fig({ src, alt, caption, className }: FigProps) {
+/** Artwork printed as a plate: hard-edged image with a mono FIG caption under a hairline. */
+export function Plate({ src, alt, caption, className, sizes = "100vw" }: PlateProps) {
+  const [fig, ...rest] = caption.split(" — ");
   return (
-    <figure className={`fig ${className ?? ""}`} data-reveal>
-      <div className="fig__frame">
-        <Image src={asset(src)} alt={alt} width={1028} height={1028} sizes="(max-width: 767px) 100vw, 640px" className="fig__img" />
+    <figure className={`plate ${className ?? ""}`} data-reveal="clip">
+      <div className="plate__img">
+        <Image src={asset(src)} alt={alt} fill sizes={sizes} className="plate__pic" />
       </div>
-      <figcaption className="fig__caption mono">{caption}</figcaption>
+      <figcaption className="plate__cap mono">
+        <span className="plate__fig">{fig}</span>
+        <span>{rest.join(" — ")}</span>
+      </figcaption>
     </figure>
   );
 }

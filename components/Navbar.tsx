@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Download, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { INSTALL_URL, NAV_LINKS } from "@/lib/site";
 
 export default function Navbar() {
@@ -45,9 +45,9 @@ export default function Navbar() {
     <header className={`nav${scrolled ? " nav--scrolled" : ""}${open ? " nav--open" : ""}`}>
       <nav className="nav__inner container" aria-label="Primary">
         <a className="nav__logo" href="#top" aria-label="Neovarch Agent, back to top">
-          NEOVARCH AGENT
+          NEOVARCH<span className="nav__logo-sub">AGENT</span>
         </a>
-        <ul className="nav__links">
+        <ul className="nav__links mono">
           {NAV_LINKS.map((l) => (
             <li key={l.label}>
               <a href={l.href} target="_blank" rel="noopener noreferrer" aria-label={`${l.label} (opens in a new tab)`}>
@@ -57,7 +57,7 @@ export default function Navbar() {
           ))}
         </ul>
         <a
-          className="btn btn--primary nav__cta"
+          className="blk blk--sm nav__cta"
           href={INSTALL_URL}
           target="_blank"
           rel="noopener noreferrer"
@@ -74,7 +74,7 @@ export default function Navbar() {
           aria-controls="mobile-drawer"
           onClick={() => setOpen((v) => !v)}
         >
-          {open ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
+          {open ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
         </button>
       </nav>
 
@@ -104,14 +104,13 @@ export default function Navbar() {
           ))}
         </ul>
         <a
-          className="btn btn--primary drawer__cta"
+          className="blk drawer__cta"
           href={INSTALL_URL}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Install Neovarch (opens in a new tab)"
           onClick={() => setOpen(false)}
         >
-          <Download size={16} aria-hidden="true" />
           Install Neovarch
         </a>
       </div>
