@@ -1,9 +1,10 @@
-import SectionHead from "./SectionHead";
-import CardGrid, { type Card } from "./CardGrid";
+import { Briefcase, Cpu, LayoutGrid, Users } from "lucide-react";
+import { Section } from "./Section";
 
-const FEATURES: Card[] = [
+const CARDS = [
   {
-    label: "WORK",
+    tag: "WORK",
+    Icon: Briefcase,
     title: "Orders become execution",
     items: [
       "Real-time streaming chat with live tool activity",
@@ -13,7 +14,8 @@ const FEATURES: Card[] = [
     ],
   },
   {
-    label: "STAFF",
+    tag: "STAFF",
+    Icon: Users,
     title: "Agents that remember",
     items: [
       "Agent profiles with persistent memory across sessions",
@@ -23,17 +25,14 @@ const FEATURES: Card[] = [
     ],
   },
   {
-    label: "MODELS",
+    tag: "MODELS",
+    Icon: Cpu,
     title: "Any provider, any model",
-    items: [
-      "OpenRouter (200+ models)",
-      "Nous Portal",
-      "OpenAI Platform",
-      "Local inference: Ollama, LM Studio, vLLM",
-    ],
+    items: ["OpenRouter (200+ models)", "Nous Portal", "OpenAI Platform", "Local inference: Ollama, LM Studio, vLLM"],
   },
   {
-    label: "INTERFACE",
+    tag: "INTERFACE",
+    Icon: LayoutGrid,
     title: "An office that's yours",
     items: [
       "Isometric office visualization",
@@ -46,15 +45,26 @@ const FEATURES: Card[] = [
 
 export default function Features() {
   return (
-    <section className="section" id="features" aria-labelledby="features-title">
-      <SectionHead
-        id="features-title"
-        eyebrow="03 · Features"
-        title="Everything an office needs."
-        emphasis="Nothing it doesn't."
-        sub="Ten capabilities, organized by function."
-      />
-      <CardGrid cards={FEATURES} />
-    </section>
+    <Section id="features" label="03 · FEATURES" heading="Everything an office needs. Nothing it doesn't.">
+      <p className="subheading" data-reveal>
+        Ten capabilities, organized by function.
+      </p>
+      <div className="grid-2">
+        {CARDS.map(({ tag, Icon, title, items }) => (
+          <article className="card" key={tag} data-reveal>
+            <div className="card__tag mono">
+              <Icon size={18} aria-hidden="true" />
+              {tag}
+            </div>
+            <h3 className="card__title">{title}</h3>
+            <ul className="list">
+              {items.map((i) => (
+                <li key={i}>{i}</li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </Section>
   );
 }
