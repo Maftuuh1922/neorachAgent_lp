@@ -24,6 +24,7 @@ export default function ArtFigure({ src, alt, width, height, fig, note }: Props)
         width={width}
         height={height}
         sizes="(max-width: 1120px) 100vw, 1056px"
+        loading="eager"
       />
       <figcaption className={`${styles.caption} x-mono`}>
         <b>{fig}</b>

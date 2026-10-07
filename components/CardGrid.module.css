@@ -9,7 +9,6 @@
 .card {
   padding: 22px 24px;
   border-radius: var(--r-m);
-  background: var(--fill-tertiary);
 }
 
 .title {

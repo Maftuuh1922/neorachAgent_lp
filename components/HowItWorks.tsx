@@ -52,9 +52,9 @@ export default function HowItWorks() {
         fig="FIG.02 — The remote"
         note="PC brain · phone remote"
       />
-      <div>
+      <div className={styles.steps}>
         {STEPS.map((step) => (
-          <article key={step.num} className={styles.step}>
+          <article key={step.num} className={`${styles.step} card-surface`}>
             <div className={styles.intro}>
               <p className={styles.num}>{step.num}</p>
               <p className={`${styles.eyebrow} x-mono`}>{step.eyebrow}</p>

@@ -1,70 +1,45 @@
-/* Full-bleed framed hero: painted art, scrims, serif wordmark. */
+/* Flat red hero: serif wordmark on plain red (left), art in a thin bone frame (right). */
 .hero {
-  position: relative;
-  min-height: clamp(560px, 82vh, 860px);
-  margin: 7px;
-  border-radius: var(--r-xl);
-  overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-  color: var(--hero-text);
-  isolation: isolate;
-  box-shadow: var(--x-shadow);
-  background: var(--hero-surface);
-  outline: 1px solid var(--x-red);
-  outline-offset: 6px;
-}
-
-.img {
-  object-fit: cover;
-  object-position: 40% 60%;
-  z-index: -2;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background:
-    linear-gradient(to top, var(--hero-scrim-strong) 0%, var(--hero-scrim-soft) 42%, transparent 66%),
-    linear-gradient(to right, var(--hero-scrim-side) 0%, transparent 60%);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: clamp(24px, 4vw, 56px);
+  align-items: center;
+  min-height: clamp(560px, 78vh, 780px);
+  padding-block: clamp(24px, 4vw, 48px);
+  color: var(--bone);
+  background: var(--red);
 }
 
 .copy {
   display: grid;
   gap: 14px;
+  min-width: 0;
   max-width: 40rem;
-  padding: clamp(24px, 4vw, 48px);
-  padding-bottom: clamp(28px, 3.4vw, 44px);
 }
 
 .eyebrow {
   justify-self: start;
   padding: 6px 12px;
-  border-radius: var(--r-pill);
-  background: var(--hero-glass);
-  border: 1px solid var(--hero-glass-stroke);
-  -webkit-backdrop-filter: var(--x-blur);
-  backdrop-filter: var(--x-blur);
+  border-radius: var(--r-s);
+  border: 1px solid var(--bone);
   font: var(--weight-regular) var(--size-caption) / var(--lh) var(--x-mono);
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .wordmark {
-  font: var(--weight-regular) clamp(64px, 11vw, 136px) / 0.82 var(--x-serif);
+  font: var(--weight-regular) clamp(60px, 9vw, 124px) / 0.82 var(--x-serif);
   letter-spacing: -0.01em;
   text-transform: uppercase;
 }
 .wordmark span { display: block; }
-.wordmark span + span { color: var(--x-red); }
+.wordmark span + span { font-style: italic; color: var(--bone); }
 
 .rule {
   display: block;
   width: 64px;
   height: 2px;
-  background: var(--x-red);
+  background: var(--bone);
 }
 
 .sub {
@@ -74,28 +49,49 @@
 
 .meta {
   font-size: var(--size-small);
-  color: var(--hero-text-muted);
+  color: var(--text-secondary);
+  max-width: 46ch;
+}
+
+.art {
+  margin: 0;
+  min-width: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  max-height: 680px;
+  width: 100%;
+  border: 1px solid var(--bone);
+  outline: 1px solid var(--bone);
+  outline-offset: 6px;
+  overflow: hidden;
+  margin: 7px;
+  width: calc(100% - 14px);
+}
+
+.img {
+  object-fit: cover;
+  object-position: 58% 50%;
 }
 
 .credit {
-  position: absolute;
-  right: clamp(20px, 3vw, 32px);
-  bottom: 16px;
+  justify-self: end;
+  margin-top: 8px;
   padding: 4px 10px;
-  border: 1px solid var(--stroke-primary);
-  border-radius: 0;
-  background: var(--hero-glass-faint);
-  -webkit-backdrop-filter: var(--x-blur);
-  backdrop-filter: var(--x-blur);
+  border: 1px solid var(--bone);
   font: var(--weight-regular) var(--size-caption) / var(--lh) var(--x-mono);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--text-primary);
+  color: var(--bone);
 }
 
 @media (max-width: 760px) {
-  .hero { flex-direction: column; justify-content: flex-end; align-items: stretch; }
-  .img { object-position: 78% 40%; }
-  .copy { padding-top: 260px; padding-bottom: 28px; }
-  .credit { top: 16px; right: 16px; bottom: auto; }
+  .hero { grid-template-columns: minmax(0, 1fr); min-height: 0; padding-top: 12px; }
+  .art { order: -1; }
+  .frame { aspect-ratio: 4 / 3; }
+  .credit { justify-self: start; }
 }

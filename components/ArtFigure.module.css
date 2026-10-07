@@ -7,8 +7,8 @@
   width: 100%;
   height: clamp(300px, 52vw, 680px);
   object-fit: cover;
-  border-radius: var(--r-l);
-  outline: 1px solid var(--x-red);
+  border-radius: 2px;
+  outline: 1px solid var(--bone);
   outline-offset: 6px;
 }
 
@@ -23,7 +23,7 @@
 
 .caption b {
   font-weight: var(--weight-regular);
-  color: var(--x-red-text);
+  color: var(--bone);
 }
 
 @media (max-width: 760px) {

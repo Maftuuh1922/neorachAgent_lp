@@ -21,7 +21,7 @@ export default function Comparison() {
         title="Same inspiration."
         emphasis="Different direction."
       />
-      <div className={styles.compare}>
+      <div className={`${styles.compare} card-surface`}>
         <table className={styles.table}>
           <thead>
             <tr>
