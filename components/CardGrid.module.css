@@ -1,0 +1,36 @@
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 16px;
+}
+/* Exactly four cards: a 2 x 2 grid until phone width. */
+.four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+.card {
+  padding: 22px 24px;
+  border-radius: var(--r-m);
+  background: var(--fill-tertiary);
+}
+
+.title {
+  font: var(--weight-medium) var(--size-heading) / var(--lh) var(--sans);
+  margin-bottom: 10px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 6px;
+  line-height: var(--lh);
+  color: var(--x-red-text);
+}
+
+.list { margin: 0; padding: 0; list-style: none; }
+.list li { padding: 10px 0; border-bottom: 1px solid var(--stroke-secondary); }
+.list li:last-child { border-bottom: 0; padding-bottom: 0; }
+
+@media (max-width: 900px) {
+  .cards:not(.four) { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .four { grid-template-columns: minmax(0, 1fr); }
+}

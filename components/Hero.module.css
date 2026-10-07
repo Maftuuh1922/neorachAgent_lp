@@ -1,0 +1,101 @@
+/* Full-bleed framed hero: painted art, scrims, serif wordmark. */
+.hero {
+  position: relative;
+  min-height: clamp(560px, 82vh, 860px);
+  margin: 7px;
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  color: var(--hero-text);
+  isolation: isolate;
+  box-shadow: var(--x-shadow);
+  background: var(--hero-surface);
+  outline: 1px solid var(--x-red);
+  outline-offset: 6px;
+}
+
+.img {
+  object-fit: cover;
+  object-position: 40% 60%;
+  z-index: -2;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(to top, var(--hero-scrim-strong) 0%, var(--hero-scrim-soft) 42%, transparent 66%),
+    linear-gradient(to right, var(--hero-scrim-side) 0%, transparent 60%);
+}
+
+.copy {
+  display: grid;
+  gap: 14px;
+  max-width: 40rem;
+  padding: clamp(24px, 4vw, 48px);
+  padding-bottom: clamp(28px, 3.4vw, 44px);
+}
+
+.eyebrow {
+  justify-self: start;
+  padding: 6px 12px;
+  border-radius: var(--r-pill);
+  background: var(--hero-glass);
+  border: 1px solid var(--hero-glass-stroke);
+  -webkit-backdrop-filter: var(--x-blur);
+  backdrop-filter: var(--x-blur);
+  font: var(--weight-regular) var(--size-caption) / var(--lh) var(--x-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.wordmark {
+  font: var(--weight-regular) clamp(64px, 11vw, 136px) / 0.82 var(--x-serif);
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+.wordmark span { display: block; }
+.wordmark span + span { color: var(--x-red); }
+
+.rule {
+  display: block;
+  width: 64px;
+  height: 2px;
+  background: var(--x-red);
+}
+
+.sub {
+  font: var(--weight-medium) var(--size-lede) / var(--lh) var(--sans);
+  max-width: 34ch;
+}
+
+.meta {
+  font-size: var(--size-small);
+  color: var(--hero-text-muted);
+}
+
+.credit {
+  position: absolute;
+  right: clamp(20px, 3vw, 32px);
+  bottom: 16px;
+  padding: 4px 10px;
+  border: 1px solid var(--stroke-primary);
+  border-radius: 0;
+  background: var(--hero-glass-faint);
+  -webkit-backdrop-filter: var(--x-blur);
+  backdrop-filter: var(--x-blur);
+  font: var(--weight-regular) var(--size-caption) / var(--lh) var(--x-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+@media (max-width: 760px) {
+  .hero { flex-direction: column; justify-content: flex-end; align-items: stretch; }
+  .img { object-position: 78% 40%; }
+  .copy { padding-top: 260px; padding-bottom: 28px; }
+  .credit { top: 16px; right: 16px; bottom: auto; }
+}

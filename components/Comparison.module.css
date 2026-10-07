@@ -1,0 +1,96 @@
+.compare {
+  margin-inline: -12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.table {
+  width: 100%;
+  min-width: 400px; /* 2 columns x 200px */
+  table-layout: fixed;
+  border-collapse: collapse;
+  font: var(--weight-regular) var(--size-small) / var(--lh) var(--sans);
+  font-variant-numeric: tabular-nums;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 12px;
+  border-bottom: 1px solid var(--stroke-secondary);
+  scroll-snap-align: start;
+}
+
+.table thead th {
+  font: var(--weight-medium) var(--size-body) / var(--lh) var(--sans);
+  color: var(--text-primary);
+  padding-top: 0;
+  padding-bottom: 14px;
+}
+
+.table th small {
+  display: block;
+  margin-top: 2px;
+  font: var(--weight-regular) var(--size-caption) / var(--lh) var(--sans);
+  color: var(--text-secondary);
+}
+
+.table thead th > :global(.chip) {
+  display: flex;
+  width: fit-content;
+  margin-top: 8px;
+}
+
+.table tbody tr:last-child > * { border-bottom: 0; }
+
+/* Each value carries its row label above it. */
+.table td[data-label]::before {
+  content: attr(data-label);
+  content: attr(data-label) / "";
+  display: block;
+  margin-bottom: 4px;
+  font: var(--weight-regular) var(--size-caption) / var(--lh) var(--sans);
+  color: var(--text-secondary);
+}
+
+.num { font-weight: var(--weight-bold); white-space: nowrap; }
+
+/* The row-header column collapses visually but stays for screen readers. */
+.table .srOnly {
+  width: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (max-width: 599px) {
+  .table { min-width: calc(2 * 68vw); }
+}
+
+/* Get-started callout */
+.callout {
+  max-width: 420px;
+  display: grid;
+  gap: 10px;
+  padding: 16px 18px 18px;
+  border-radius: var(--r-l);
+  background: var(--mat-agent);
+  -webkit-backdrop-filter: var(--x-blur);
+  backdrop-filter: var(--x-blur);
+  border: 1px solid var(--stroke-composer);
+  box-shadow: var(--x-shadow);
+  color: var(--text-primary);
+  font-size: var(--size-small);
+}
+
+.calloutHead {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+}
+
+.calloutLead { font-size: var(--size-body); }
