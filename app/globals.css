@@ -192,7 +192,7 @@ code { font-family: var(--font-mono); font-size: 0.9em; }
 .hero__bg {
   position: absolute; inset: 0; z-index: -1; overflow: hidden;
   background: right center / contain no-repeat;
-  opacity: 0.55;
+  opacity: 0.72;
   mix-blend-mode: multiply;
   image-rendering: pixelated;
   -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 14%, #000 72%, transparent 100%);
@@ -305,7 +305,8 @@ code { font-family: var(--font-mono); font-size: 0.9em; }
 /* ---------- responsive ---------- */
 @media (max-width: 960px) {
   .hero__grid { grid-template-columns: 1fr; }
-  .hero__bg { background-position: center top; background-size: cover; opacity: 0.34; }
+  .hero__bg { background-position: center top; background-size: cover; opacity: 0.42; }
+  .hero__vid { object-fit: cover; object-position: center top; }
   .feats { grid-template-columns: 1fr; }
   .feat--right { flex-direction: column; margin-top: 0; }
   .dl { grid-template-columns: 1fr; gap: 56px; }
@@ -430,16 +431,10 @@ img, .shot, .shot__art { -webkit-user-drag: none; user-select: none; -webkit-tou
 }
 @media (prefers-reduced-motion: reduce) { .hero__p { animation: none; } }
 
-/* frame-by-frame motion: hair sways right, then left, then a blink */
-.hero__kf {
-  position: absolute; inset: 0; opacity: 0; pointer-events: none;
-  background-position: inherit; background-size: inherit; background-repeat: no-repeat;
-  animation: 9s ease-in-out infinite;
+
+/* anime loop: hand-drawn keyframes (hair sway, blink, phone tap) */
+.hero__vid {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: contain; object-position: right center;
+  pointer-events: none; image-rendering: pixelated;
 }
-.hero__kf--r { animation-name: kfR; }
-.hero__kf--l { animation-name: kfL; }
-.hero__kf--blink { animation-name: kfBlink; animation-timing-function: steps(1); }
-@keyframes kfR { 0%, 14% { opacity: 0; } 22%, 31% { opacity: 1; } 39%, 100% { opacity: 0; } }
-@keyframes kfL { 0%, 44% { opacity: 0; } 52%, 61% { opacity: 1; } 69%, 100% { opacity: 0; } }
-@keyframes kfBlink { 0%, 81% { opacity: 0; } 81.5% { opacity: 1; } 83.2%, 100% { opacity: 0; } }
-@media (prefers-reduced-motion: reduce) { .hero__kf { animation: none; } }
