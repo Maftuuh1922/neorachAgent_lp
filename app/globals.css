@@ -466,3 +466,43 @@ img, .shot, .shot__art { -webkit-user-drag: none; user-select: none; -webkit-tou
 /* drop the paper-white around the clip: white multiplies into the page */
 .hero__bg { mix-blend-mode: multiply; background: none; }
 .hero__vid { mix-blend-mode: multiply; }
+
+/* ---------- footer reveal (art sharpens as the page scrolls away) ---------- */
+.footer--reveal {
+  --p: 0;
+  position: relative; overflow: hidden; border-top: 0;
+  min-height: max(100svh, 640px);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  background: #3A0505; color: #F6EDEA;
+}
+.footer__art { position: absolute; inset: 0; }
+.footer__img {
+  position: absolute; inset: -6%;
+  background: center top / cover no-repeat;
+  image-rendering: pixelated;
+  filter: blur(calc((1 - var(--p)) * 14px));
+  transform: translate3d(0, calc((1 - var(--p)) * -8%), 0) scale(calc(1.12 - var(--p) * 0.12));
+  will-change: transform, filter;
+}
+.footer--reveal::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: rgba(58, 5, 5, calc(0.55 - var(--p) * 0.3));
+}
+.footer__word {
+  position: relative; z-index: 1; margin: 0; padding: 0 var(--gutter);
+  font-family: var(--font-display); font-weight: 400; line-height: 0.82;
+  font-size: clamp(64px, 19vw, 300px); letter-spacing: -0.02em;
+  color: rgba(246, 237, 234, 0.22);
+  transform: translateY(calc((1 - var(--p)) * 30px));
+}
+.footer--reveal .footer__row { position: relative; z-index: 1; padding-top: 18px; padding-bottom: 28px; border-top: 1px solid rgba(246, 237, 234, 0.25); }
+.footer--reveal .footer__name { color: #F6EDEA; }
+.footer--reveal .footer__links a { color: rgba(246, 237, 234, 0.75); }
+.footer--reveal .footer__links a:hover { color: #fff; }
+@media (prefers-reduced-motion: reduce) {
+  .footer__img { filter: none; transform: none; }
+  .footer__word { transform: none; }
+}
+
+/* sheet starts flush with the top of the screen: no rounded corner showing red at the top */
+.page { margin-top: 0; border-top-left-radius: 0; border-top-right-radius: 0; }
