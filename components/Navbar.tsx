@@ -16,8 +16,18 @@ export default function Navbar() {
           <a href={`${home}#mulai`}>Unduh</a>
           <a className="nav__keep" href={asset("/docs/")}>Docs</a>
           <a className="nav__keep nav__gh" href={GITHUB_URL} target="_blank" rel="noopener noreferrer">GitHub</a>
+        </nav>
+        <input id="nav-toggle" className="nav__toggle" type="checkbox" aria-hidden="true" />
+        <label htmlFor="nav-toggle" className="nav__burger" aria-label="Buka atau tutup menu">
+          <span /><span /><span />
+        </label>
+        <nav className="nav__menu" aria-label="Menu">
+          <a href={`${home}#fitur`}>Fitur</a>
+          <a href={`${home}#mulai`}>Unduh</a>
+          <a href={asset("/docs/")}>Docs</a>
+          <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">GitHub</a>
           <a className="btn btn--solid btn--sm" href={RELEASE_URL} target="_blank" rel="noopener noreferrer">
-            {RELEASE_VERSION}
+            Download {RELEASE_VERSION}
           </a>
         </nav>
       </div>
