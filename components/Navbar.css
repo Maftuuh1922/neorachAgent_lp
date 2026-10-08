@@ -38,7 +38,7 @@
 /* Brand type + logo */
 .nav__logo { display: block; width: 24px; height: 32px; }
 .nav__brand { color: #b0121a; }
-.nav__logo { width: 50px; height: 50px; object-fit: contain; }
+.nav__logo { width: 52px; height: 52px; object-fit: contain; }
 .nav__name { display: block; width: auto; height: 44px; }
 @media (max-width: 480px) { .nav__logo { width: 40px; height: 40px; } .nav__name { height: 36px; } }
 .nav__links a, .nav__menu a:not(.btn) { font-family: "Cinzel", serif; font-weight: 600; letter-spacing: .06em; }

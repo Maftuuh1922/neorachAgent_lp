@@ -8,8 +8,8 @@ export default function Navbar() {
     <header className="nav">
       <div className="wrap nav__row">
         <a className="nav__brand" href={`${home}#top`}>
-          <img className="nav__logo" src={asset("/art/agent-mark.webp")} alt="" width={256} height={256} aria-hidden="true" />
-          <img className="nav__name" src={asset("/art/name.webp")} alt="Neovarch Agent" width={560} height={289} />
+          <img className="nav__logo" src={asset("/art/mascot-mark.webp")} alt="" width={256} height={256} aria-hidden="true" />
+          <img className="nav__name" src={asset("/art/name.webp")} alt="Neovarch Agent" width={720} height={221} />
         </a>
         <nav className="nav__links" aria-label="Navigasi utama">
           <a href={`${home}#fitur`}>Fitur</a>
