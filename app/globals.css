@@ -612,7 +612,14 @@ img, .shot, .shot__art { -webkit-user-drag: none; user-select: none; -webkit-tou
 
 /* ---------- hero: ASCII artwork, no frame ---------- */
 .hero__ascii { position: relative; justify-self: center; width: 100%; max-width: 520px; }
-.hero__ascii img { display: block; width: 100%; height: auto; image-rendering: auto; }
+.hero__ascii img { position: relative; display: block; width: 100%; height: auto; }
+.hero__lines {
+  position: absolute; inset: -8% -6%; pointer-events: none;
+  background:
+    linear-gradient(28deg, transparent 49.85%, rgba(196,20,20,0.35) 50%, transparent 50.15%),
+    linear-gradient(-14deg, transparent 49.85%, rgba(196,20,20,0.28) 50%, transparent 50.15%),
+    linear-gradient(68deg, transparent 49.85%, rgba(196,20,20,0.22) 50%, transparent 50.15%);
+}
 @media (min-width: 961px) {
   .hero__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr); align-items: center; }
 }

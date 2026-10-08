@@ -29,7 +29,8 @@ export default function Hero() {
           <Terminal />
         </div>
         <div className="hero__ascii" aria-hidden="true">
-          <img src={asset("/art/hero-ascii.webp")} alt="" width={1075} height={1440} />
+          <span className="hero__lines" />
+          <img src={asset("/art/hero-globe.webp")} alt="" width={1100} height={1100} />
         </div>
       </div>
     </section>
