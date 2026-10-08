@@ -53,18 +53,10 @@ export default function Hero() {
             </video>
             <span className="shot__shield" aria-hidden="true" />
           </div>
-          <div className="hcard__stat">
-            <p className="hcard__big">QR</p>
-            <p className="hcard__small">Pasangkan HP ke PC
-              <br />di jaringan lokal</p>
-          </div>
-          <div className="hcard__note">
-            <p className="hcard__h">Data tetap di PC</p>
-            <p className="hcard__small">Core agen berjalan lokal, semua
-              <br />tersimpan di <code>~/.neovarch</code>.</p>
-          </div>
-          <div className="hcard__tab" aria-label="Platform">
-            <span>Windows</span><span>Linux</span><span>Android</span><span className="is-soon">macOS</span>
+          <div className="hcard__tab" aria-label="Windows, Linux, macOS">
+            <img src={asset("/art/os-windows.webp")} alt="" />
+            <img src={asset("/art/os-linux.webp")} alt="" />
+            <img src={asset("/art/os-mac.webp")} alt="" />
           </div>
         </div>
       </div>
