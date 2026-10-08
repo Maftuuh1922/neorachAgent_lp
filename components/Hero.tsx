@@ -51,10 +51,8 @@ export default function Hero() {
             </video>
             <span className="shot__shield" aria-hidden="true" />
           </div>
-          <div className="hcard__tab" aria-label="Windows, Linux, macOS">
-            <img src={asset("/art/os-windows.webp")} alt="" />
-            <img src={asset("/art/os-linux.webp")} alt="" />
-            <img src={asset("/art/os-mac.webp")} alt="" />
+          <div className="hcard__tab" aria-label="Platform">
+            <span>Windows</span><span>Linux</span><span>Android</span><span className="is-soon">macOS</span>
           </div>
         </div>
       </div>
