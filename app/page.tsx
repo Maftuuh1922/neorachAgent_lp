@@ -1,32 +1,31 @@
+import Ticker from "@/components/Ticker";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Concept from "@/components/Concept";
-import Setup from "@/components/Setup";
+import AppSection from "@/components/AppSection";
+import OsCards from "@/components/OsCards";
 import Features from "@/components/Features";
-import Workflow from "@/components/Workflow";
-import Collaboration from "@/components/Collaboration";
-import Identity from "@/components/Identity";
+import Portal from "@/components/Portal";
+import FooterCta from "@/components/FooterCta";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
 
-export default function Home() {
+export default function Page() {
   return (
-    <>
-      <a className="skip-link" href="#main">
-        Skip to content
-      </a>
+    <div className="page" id="top">
+      <div className="grain" aria-hidden="true" />
+      <div className="frame" aria-hidden="true" />
+      <Ticker />
       <Navbar />
-      <main id="main">
+      <main>
         <Hero />
-        <Concept />
-        <Setup />
+        <AppSection />
+        <OsCards />
         <Features />
-        <Workflow />
-        <Collaboration />
-        <Identity />
+        <Portal />
+        <FooterCta />
       </main>
       <Footer />
       <Reveal />
-    </>
+    </div>
   );
 }

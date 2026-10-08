@@ -1,78 +1,93 @@
-import { Num, RunHead } from "./Section";
+import Image from "next/image";
+import { asset } from "@/lib/site";
 
-const ROWS = [
+const FEATURES = [
   {
-    tag: "WORK",
-    title: "Orders become execution",
-    items: [
-      "Real-time streaming chat with live tool activity",
-      "Task board: agents execute from a shared queue",
-      "Multi-agent collaboration with meeting logs & action items",
-      "Scheduled automation via natural-language cron",
-    ],
+    n: "1",
+    verb: "Ship",
+    img: "/art/feat-code.webp",
+    alt: "Luminous ice-blue wireframe globe erupting in an energy burst on near-black background",
+    title: "Autonomous coding",
+    desc: "Agents that write, test, and ship code while you sleep. Review the diff in the morning.",
   },
   {
-    tag: "STAFF",
-    title: "Agents that remember",
-    items: [
-      "Agent profiles with persistent memory across sessions",
-      "Self-generated skills library",
-      "File browser with project context",
-      "Voice input & text-to-speech output",
-    ],
+    n: "2",
+    verb: "Remember",
+    img: "/art/feat-memory.webp",
+    alt: "Luminous wireframe globe wrapped in a glowing ice-blue network lattice on near-black background",
+    title: "Long memory",
+    desc: "Every session remembered. Your agents pick up exactly where they left off.",
   },
   {
-    tag: "MODELS",
-    title: "Any provider, any model",
-    items: ["OpenRouter (200+ models)", "Nous Portal", "OpenAI Platform", "Local inference: Ollama, LM Studio, vLLM"],
+    n: "3",
+    verb: "Automate",
+    img: "/art/feat-automation.webp",
+    alt: "Glowing orbital rings mechanism turning around a luminous wireframe globe on near-black background",
+    title: "Total automation",
+    desc: "Browser, terminal, files — agents operate your PC like a tireless night staff.",
   },
   {
-    tag: "INTERFACE",
-    title: "An office that's yours",
-    items: [
-      "Isometric office visualization",
-      "Light/dark themes",
-      "Multi-language UI (English, Indonesian)",
-      "Customizable workspace layout",
-    ],
+    n: "4",
+    verb: "Command",
+    img: "/art/feat-remote.webp",
+    alt: "Luminous wireframe globe sending ice-blue command beams to small orbiting satellites on near-black background",
+    title: "Mobile command",
+    desc: "Pair once. Direct the whole office from your pocket, from anywhere.",
+  },
+  {
+    n: "5",
+    verb: "Choose",
+    img: "/art/feat-models.webp",
+    alt: "Three glowing ice-blue and white wireframe orbs floating in a row on near-black background",
+    title: "Any model",
+    desc: "Plug in your favorite models. Open weights welcome, switch anytime.",
+  },
+  {
+    n: "6",
+    verb: "Liberate",
+    img: "/art/feat-opensource.webp",
+    alt: "Luminous wireframe globe with an open padlock of light orbiting it and sunrise rays on near-black background",
+    title: "Open source",
+    desc: "MIT licensed. Your infrastructure, your rules — free forever.",
   },
 ];
 
 export default function Features() {
   return (
-    <section id="features" className="sec sec--features" aria-labelledby="features-title">
-      <RunHead num="03" name="FEATURES" fig="INDEX" />
-      <div className="container">
-        <div className="g feat__head">
-          <h2 id="features-title" className="feat__title" data-reveal>
-            Everything an office needs. Nothing it doesn&apos;t.
-          </h2>
-          <Num n="03" className="feat__num" />
-          <p className="feat__sub mono" data-reveal>
-            Ten capabilities, organized by function.
-          </p>
-        </div>
-        <ol className="feat__index">
-          {ROWS.map(({ tag, title, items }, r) => (
-            <li className="feat__row g" key={tag} data-reveal>
-              <div className="feat__label">
-                <span className="feat__idx mono">03.{String.fromCharCode(65 + r)}</span>
-                <h3 className="feat__tag">{tag}</h3>
-                <p className="feat__name">{title}</p>
+    <section className="section--paper" aria-labelledby="feat-title" style={{ borderTop: "1px solid var(--line-ice)" }}>
+      <div className="wrap sec-head">
+        <span className="mono kicker" data-reveal>
+          — Capabilities
+        </span>
+        <h2 id="feat-title" className="display" data-reveal>
+          Everything <em>an office needs.</em>
+        </h2>
+        <p data-reveal>
+          Six crafts, one commander. Each agent is a specialist; together they
+          are a workforce that never clocks out.
+        </p>
+      </div>
+      <div className="wrap">
+        <div className="featgrid">
+          {FEATURES.map((f) => (
+            <article key={f.n} className="feat" data-reveal>
+              <div className="feat__img">
+                <Image
+                  src={asset(f.img)}
+                  alt={f.alt}
+                  width={800}
+                  height={656}
+                  sizes="(max-width: 680px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
               </div>
-              <ul className="feat__items mono">
-                {items.map((it, i) => (
-                  <li key={it}>
-                    <span className="feat__n" aria-hidden="true">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <span>{it}</span>
-                  </li>
-                ))}
-              </ul>
-            </li>
+              <div className="feat__body">
+                <span className="feat__num">#{f.n} {f.verb}</span>
+                <h3 className="serif-it feat__title">{f.title}</h3>
+                <p className="feat__desc">{f.desc}</p>
+              </div>
+            </article>
           ))}
-        </ol>
+        </div>
       </div>
     </section>
   );

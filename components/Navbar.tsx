@@ -1,118 +1,44 @@
-"use client";
-
-import { useCallback, useEffect, useRef, useState } from "react";
-import { Menu, X } from "lucide-react";
-import { INSTALL_URL, NAV_LINKS } from "@/lib/site";
+import { GithubIcon, XIcon } from "@/components/icons";
+import { DOCS_URL, GITHUB_URL, COMMUNITY_URL, INSTALL_URL } from "@/lib/site";
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
-  const toggleRef = useRef<HTMLButtonElement>(null);
-  const drawerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 100);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  const close = useCallback(() => {
-    setOpen(false);
-    toggleRef.current?.focus();
-  }, []);
-
-  useEffect(() => {
-    if (!open) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") close();
-    };
-    const onResize = () => {
-      if (window.innerWidth >= 768) setOpen(false);
-    };
-    document.addEventListener("keydown", onKey);
-    window.addEventListener("resize", onResize);
-    document.body.style.overflow = "hidden";
-    drawerRef.current?.querySelector<HTMLElement>("a")?.focus();
-    return () => {
-      document.removeEventListener("keydown", onKey);
-      window.removeEventListener("resize", onResize);
-      document.body.style.overflow = "";
-    };
-  }, [open, close]);
-
   return (
-    <header className={`nav${scrolled ? " nav--scrolled" : ""}${open ? " nav--open" : ""}`}>
-      <nav className="nav__inner container" aria-label="Primary">
-        <a className="nav__logo" href="#top" aria-label="Neovarch Agent, back to top">
-          NEOVARCH<span className="nav__logo-sub">AGENT</span>
+    <header className="nav">
+      <div className="wrap nav__grid">
+        <nav className="nav__links nav__links--left" aria-label="Primary">
+          <a href="#agent">Agent</a>
+          <a href={DOCS_URL} target="_blank" rel="noopener noreferrer">
+            Docs
+          </a>
+        </nav>
+        <a className="nav__brand" href="#top" aria-label="Neorach Agent — home">
+          <span className="b1">NEORACH</span>
+          <span className="b2">AGENT</span>
+          <span className="nav__social">
+            <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <GithubIcon size={15} />
+            </a>
+            <a href={COMMUNITY_URL} target="_blank" rel="noopener noreferrer" aria-label="Community">
+              <XIcon size={15} />
+            </a>
+          </span>
         </a>
-        <ul className="nav__links mono">
-          {NAV_LINKS.map((l) => (
-            <li key={l.label}>
-              <a href={l.href} target="_blank" rel="noopener noreferrer" aria-label={`${l.label} (opens in a new tab)`}>
-                {l.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-        <a
-          className="blk blk--sm nav__cta"
-          href={INSTALL_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Install Neovarch (opens in a new tab)"
-        >
-          Install Neovarch
-        </a>
-        <button
-          ref={toggleRef}
-          type="button"
-          className="nav__toggle"
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          aria-controls="mobile-drawer"
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
-        </button>
-      </nav>
-
-      <div
-        id="mobile-drawer"
-        ref={drawerRef}
-        className="drawer"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Menu"
-        aria-hidden={!open}
-        inert={!open}
-      >
-        <ul className="drawer__links">
-          {NAV_LINKS.map((l) => (
-            <li key={l.label}>
-              <a
-                href={l.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`${l.label} (opens in a new tab)`}
-                onClick={() => setOpen(false)}
-              >
-                {l.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-        <a
-          className="blk drawer__cta"
-          href={INSTALL_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Install Neovarch (opens in a new tab)"
-          onClick={() => setOpen(false)}
-        >
-          Install Neovarch
-        </a>
+        <nav className="nav__links nav__links--right" aria-label="Secondary">
+          <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+          <a href={COMMUNITY_URL} target="_blank" rel="noopener noreferrer">
+            Community
+          </a>
+          <a
+            className="pill pill--blue"
+            href={INSTALL_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Install
+          </a>
+        </nav>
       </div>
     </header>
   );
