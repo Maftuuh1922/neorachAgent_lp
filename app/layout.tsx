@@ -1,50 +1,45 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 import { asset } from "@/lib/site";
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-  variable: "--font-inter",
-  display: "swap",
-});
+// Display serif: system Didone stack (Playfair via next/font blocked offline).
+// --font-display is defined in globals.css: "Playfair Display", Didot, "Bodoni MT", Georgia, serif.
 
-const jetbrainsMono = JetBrains_Mono({
+const mono = JetBrains_Mono({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
-  variable: "--font-jetbrains-mono",
+  variable: "--font-mono",
   display: "swap",
 });
 
 // Absolute origin for social preview URLs. Override with SITE_URL at build time.
 const siteUrl = process.env.SITE_URL ?? "https://maftuuh1922.github.io";
-const ogImage = asset("/art/og.jpg");
+const ogImage = asset("/art/portal-banner.webp");
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Neovarch Agent — AI Workforce Under Your Command",
+  title: "Neorach Agent — Command Your Own AI Workforce",
   description:
-    "Neovarch Agent: Open-source AI agent platform. Autonomous coding, research, and task execution controlled from your phone. Local inference, zero cloud dependency.",
+    "Neorach Agent: open-source AI workforce on your PC, commanded from your phone. Agents that code, research, and ship. MIT licensed, free forever.",
   keywords: [
     "AI agent platform",
     "autonomous AI agents",
-    "local AI agent",
     "open-source AI agent",
+    "AI workforce",
     "AI task automation",
-    "AI coding assistant",
   ],
   openGraph: {
-    title: "Neovarch Agent — The office runs itself",
+    title: "Neorach Agent — The Workforce That Never Sleeps",
     description:
-      "Open-source AI agent platform with mobile control. Local execution, autonomous task completion, zero cloud dependency.",
+      "Open-source AI agents on your PC, commanded from your phone. Free forever, MIT licensed.",
     type: "website",
-    images: [{ url: ogImage, width: 1200, height: 630, alt: "Neovarch Agent — duotone red and black mecha artwork" }],
+    images: [{ url: ogImage, width: 1200, height: 630, alt: "Neorach Agent — luminous ice-blue wireframe globe" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Neovarch Agent — AI Workforce Under Your Command",
-    description: "Open-source AI agents. Mobile control. Local execution.",
+    title: "Neorach Agent — Command Your Own AI Workforce",
+    description: "Open-source AI agents. Your PC is the brain, your phone is the remote.",
     images: [ogImage],
   },
 };
@@ -52,8 +47,8 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#000000",
-  colorScheme: "dark",
+  themeColor: "#0a1628",
+  colorScheme: "light",
 };
 
 // Marks <html> as JS-enabled before first paint so reveal animations only hide content when JS can show it again.
@@ -64,11 +59,17 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${inter.variable} ${jetbrainsMono.variable}`}
+      className={`${mono.variable}`}
       suppressHydrationWarning
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: jsFlag }} />
+        <link
+          rel="preload"
+          as="image"
+          href={asset("/art/hero-engraving.webp")}
+          fetchPriority="high"
+        />
       </head>
       <body>{children}</body>
     </html>
