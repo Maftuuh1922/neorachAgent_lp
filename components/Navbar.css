@@ -37,7 +37,9 @@
 
 /* Brand type + logo */
 .nav__logo { display: block; width: 24px; height: 32px; }
-.nav__brand { font-family: "Cinzel Decorative", "Cinzel", serif; font-weight: 700; color: #b0121a; letter-spacing: .04em; }
+.nav__brand { color: #b0121a; }
+.nav__wordmark { display: block; width: auto; height: 26px; }
+@media (max-width: 480px) { .nav__wordmark { height: 20px; } }
 .nav__links a, .nav__menu a:not(.btn) { font-family: "Cinzel", serif; font-weight: 600; letter-spacing: .06em; }
 .nav__links a:not(.btn) { color: #b0121a; }
 .nav__burger { color: #b0121a; }
