@@ -1,10 +1,17 @@
-import { GITHUB_URL, RELEASE_URL, RELEASE_VERSION } from "@/lib/site";
+import { GITHUB_URL, RELEASE_URL, RELEASE_VERSION, asset } from "@/lib/site";
 import Terminal from "./Terminal";
-import Shot from "./Shot";
 
 export default function Hero() {
   return (
     <section className="hero" aria-labelledby="hero-title">
+      <div
+        className="hero__bg"
+        role="img"
+        aria-label="Animasi maskot Neovarch: perempuan berambut bob dengan halo, memegang HP yang tersambung ke mecha di depan PC"
+        style={{ backgroundImage: `url(${asset("/art/hero-anim.gif")})` }}
+      >
+        <span className="shot__shield" aria-hidden="true" />
+      </div>
       <div className="wrap hero__grid">
         <div className="hero__text">
           <p className="label">// Overview</p>
@@ -28,15 +35,6 @@ export default function Hero() {
           <p className="meta">Windows x64 · Linux x64 · Android · macOS segera</p>
           <p className="meta meta--label">Atau pasang lewat terminal</p>
           <Terminal />
-        </div>
-        <div className="hero__art">
-          <Shot
-            src="/art/hero-anim.gif"
-            alt="Ilustrasi merah: maskot Neovarch, perempuan berambut bob dengan halo, memegang HP yang tersambung ke mecha di depan PC"
-            width={768}
-            height={768}
-            priority
-          />
         </div>
       </div>
     </section>
