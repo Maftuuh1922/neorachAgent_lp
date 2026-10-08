@@ -1,89 +1,76 @@
-import Image from "next/image";
-import { asset } from "@/lib/site";
+import Shot from "./Shot";
 
-const FEATURES = [
+type Item = {
+  title: string;
+  body: string;
+  img: { src: string; alt: string; width: number; height: number; caption?: string };
+};
+
+const ITEMS: Item[] = [
   {
-    n: "1",
-    verb: "Ship",
-    img: "/art/feat-code.webp",
-    alt: "Anime illustration: a giant mecha's hands type on a huge keyboard while a girl with a halo codes on a catwalk",
-    title: "Autonomous coding",
-    desc: "Agents that write, test, and ship code while you sleep. Review the diff in the morning.",
+    title: "Chat yang menjalankan alat di PC",
+    body:
+      "Tulis tugas dalam bahasa biasa. Agen membaca dan menyunting file, menjalankan perintah terminal, dan menjelaskan langkahnya sebelum bertindak. Setiap sesi tersimpan di sidebar dan bisa dibuka lagi. Perintah yang berisiko menunggu persetujuanmu.",
+    img: {
+      src: "/shots/chat.webp",
+      alt: "Tangkapan layar Neovarch Agent desktop: sesi chat bertema gelap dengan dua jawaban agen tentang struktur proyek",
+      width: 1120,
+      height: 700,
+      caption: "Desktop v1.2.1, sesi chat",
+    },
   },
   {
-    n: "2",
-    verb: "Remember",
-    img: "/art/feat-memory.webp",
-    alt: "Anime illustration: a girl walks through an endless archive of glowing memory cores beside a sleeping mecha head",
-    title: "Long memory",
-    desc: "Every session remembered. Your agents pick up exactly where they left off.",
+    title: "Dikendalikan dari HP",
+    body:
+      "Aktifkan Pengaturan ▸ Remote / Perangkat di PC, lalu pindai QR-nya dari aplikasi Android. HP tersambung ke port 9119 dengan token, lewat Wi‑Fi yang sama atau Tailscale/WireGuard. Aplikasi HP punya empat tab: Chat, Tugas (papan Kanban), Setujui (persetujuan perintah dengan notifikasi Android), dan PC.",
+    img: {
+      src: "/shots/pairing.webp",
+      alt: "Tangkapan layar Pengaturan ▸ Remote / Perangkat: QR pairing, alamat LAN, dan token untuk HP",
+      width: 1060,
+      height: 704,
+      caption: "Desktop v1.2.1, Pengaturan ▸ Remote / Perangkat",
+    },
   },
   {
-    n: "3",
-    verb: "Automate",
-    img: "/art/feat-automation.webp",
-    alt: "Anime illustration: haloed worker drones run a night-shift line while a giant mecha arm moves crates",
-    title: "Total automation",
-    desc: "Browser, terminal, files — agents operate your PC like a tireless night staff.",
+    title: "Memori, skill, dan tugas terjadwal",
+    body:
+      "Agen menyimpan catatan tentang kamu dan proyekmu, dan catatan itu dibawa ke sesi berikutnya. Skill adalah instruksi tersimpan yang bisa dibuat agen sendiri setelah tugas yang rumit, lalu dipakai ulang. Menu Scheduled jobs menjalankan prompt pada jadwal cron, misalnya merangkum folder kerja setiap pagi.",
+    img: {
+      src: "/art/feat-memory.webp",
+      alt: "Ilustrasi dithering merah: kepala mecha berhalo di lorong gelap",
+      width: 1000,
+      height: 806,
+    },
   },
   {
-    n: "4",
-    verb: "Command",
-    img: "/art/feat-remote.webp",
-    alt: "Anime illustration: a girl on a rainy street sends an order from her phone to a distant giant mecha",
-    title: "Mobile command",
-    desc: "Pair once. Direct the whole office from your pocket, from anywhere.",
-  },
-  {
-    n: "5",
-    verb: "Choose",
-    img: "/art/feat-models.webp",
-    alt: "Anime illustration: a girl on a lift plugs a cable into one of five different mecha heads racked on a hangar wall",
-    title: "Any model",
-    desc: "Plug in your favorite models. Open weights welcome, switch anytime.",
-  },
-  {
-    n: "6",
-    verb: "Liberate",
-    img: "/art/feat-opensource.webp",
-    alt: "Anime illustration: hangar doors open onto a crimson dawn as a mecha walks free and a girl releases white birds",
-    title: "Open source",
-    desc: "MIT licensed. Your infrastructure, your rules — free forever.",
+    title: "Model pilihanmu, kunci API milikmu",
+    body:
+      "Pilih penyedia dan model di Pengaturan ▸ Model: Nous Portal, OpenRouter, OpenAI, Anthropic, atau endpoint milikmu sendiri, misalnya server model lokal. Kunci API disimpan di PC kamu. Neovarch tidak punya server sendiri; percakapan hanya dikirim ke penyedia model yang kamu pilih.",
+    img: {
+      src: "/art/feat-models.webp",
+      alt: "Ilustrasi dithering merah: deretan helm mecha di rak",
+      width: 1000,
+      height: 806,
+    },
   },
 ];
 
 export default function Features() {
   return (
-    <section className="section--white section--ruled" aria-labelledby="feat-title">
-      <div className="wrap sec-head">
-        <span className="mono kicker" data-reveal>
-          — Capabilities
-        </span>
-        <h2 id="feat-title" className="display" data-reveal>
-          Everything <em>an office&nbsp;needs.</em>
-        </h2>
-        <p data-reveal>
-          Six crafts, one commander. Each agent is a specialist; together they
-          are a workforce that never clocks out.
-        </p>
-      </div>
+    <section className="section" id="fitur" aria-labelledby="fitur-title">
       <div className="wrap">
-        <div className="featgrid">
-          {FEATURES.map((f) => (
-            <article key={f.n} className="feat" data-reveal>
-              <div className="feat__img">
-                <Image
-                  src={asset(f.img)}
-                  alt={f.alt}
-                  width={1000}
-                  height={806}
-                  sizes="(max-width: 680px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
+        <p className="label">// Fitur</p>
+        <h2 id="fitur-title" className="title title--lg">Apa yang dikerjakan</h2>
+        <div className="feats">
+          {ITEMS.map((it, i) => (
+            <article key={it.title} className={`feat ${i % 2 ? "feat--right" : "feat--left"}`}>
+              <div className="feat__text">
+                <p className="feat__num">#{i + 1}</p>
+                <h3 className="feat__title">{it.title}</h3>
+                <p className="feat__body">{it.body}</p>
               </div>
-              <div className="feat__body">
-                <span className="feat__num">#{f.n} {f.verb}</span>
-                <h3 className="serif-it feat__title">{f.title}</h3>
-                <p className="feat__desc">{f.desc}</p>
+              <div className="feat__img">
+                <Shot {...it.img} />
               </div>
             </article>
           ))}

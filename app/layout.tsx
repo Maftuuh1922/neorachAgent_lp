@@ -1,21 +1,27 @@
 import type { Metadata, Viewport } from "next";
-import { JetBrains_Mono, Playfair_Display } from "next/font/google";
+import { IBM_Plex_Sans, Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import { asset } from "@/lib/site";
 import "./globals.css";
 
-// Display serif: self-hosted Playfair Display (Didone), with the system Didone stack as fallback.
-const display = Playfair_Display({
+// Condensed display serif for titles.
+const display = Instrument_Serif({
   subsets: ["latin"],
-  weight: ["500", "600", "700", "800", "900"],
-  style: ["normal", "italic"],
-  variable: "--font-playfair",
+  weight: "400",
+  variable: "--font-serif",
+  display: "swap",
+});
+
+const sans = IBM_Plex_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-plex",
   display: "swap",
 });
 
 const mono = JetBrains_Mono({
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-mono",
+  weight: ["400", "500"],
+  variable: "--font-jb",
   display: "swap",
 });
 
@@ -23,29 +29,25 @@ const mono = JetBrains_Mono({
 const siteUrl = process.env.SITE_URL ?? "https://maftuuh1922.github.io";
 const ogImage = asset("/art/og.jpg");
 
+const title = "Neovarch Agent: agen AI di PC kamu, dikendalikan dari HP";
+const description =
+  "Aplikasi desktop Windows dan Linux yang menjalankan Hermes Agent (MIT) di PC kamu, dengan aplikasi Android yang dipasangkan lewat QR di jaringan lokal. Kode terbuka.";
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Neovarch Agent — Command Your Own AI Workforce",
-  description:
-    "Neovarch Agent: open-source AI workforce on your PC, commanded from your phone. Agents that code, research, and ship. MIT licensed, free forever.",
-  keywords: [
-    "AI agent platform",
-    "autonomous AI agents",
-    "open-source AI agent",
-    "AI workforce",
-    "AI task automation",
-  ],
+  title,
+  description,
   openGraph: {
-    title: "Neovarch Agent — The Workforce That Never Sleeps",
-    description:
-      "Open-source AI agents on your PC, commanded from your phone. Free forever, MIT licensed.",
+    title,
+    description,
     type: "website",
-    images: [{ url: ogImage, width: 1200, height: 630, alt: "Neovarch Agent — an anime girl with a halo raises her phone to command a giant bone-white mecha" }],
+    locale: "id_ID",
+    images: [{ url: ogImage, width: 1200, height: 630, alt: "Neovarch Agent" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Neovarch Agent — Command Your Own AI Workforce",
-    description: "Open-source AI agents. Your PC is the brain, your phone is the remote.",
+    title,
+    description,
     images: [ogImage],
   },
 };
@@ -54,29 +56,16 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   themeColor: "#0A0606",
-  colorScheme: "light",
+  colorScheme: "dark",
 };
-
-// Marks <html> as JS-enabled before first paint so reveal animations only hide content when JS can show it again.
-const jsFlag = `document.documentElement.classList.add('js')`;
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
-      lang="en"
+      lang="id"
       data-scroll-behavior="smooth"
-      className={`${mono.variable} ${display.variable}`}
-      suppressHydrationWarning
+      className={`${display.variable} ${sans.variable} ${mono.variable}`}
     >
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: jsFlag }} />
-        <link
-          rel="preload"
-          as="image"
-          href={asset("/art/hero-engraving.webp")}
-          fetchPriority="high"
-        />
-      </head>
       <body>{children}</body>
     </html>
   );
