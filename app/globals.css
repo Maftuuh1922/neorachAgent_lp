@@ -454,3 +454,12 @@ img, .shot, .shot__art { -webkit-user-drag: none; user-select: none; -webkit-tou
   .hero__vid { object-fit: contain; object-position: center; }
   .hero__grid { grid-template-columns: 1fr; }
 }
+@media (max-width: 960px) {
+  .hero { display: flex; flex-direction: column; }
+  .hero > .wrap { order: 1; }
+  .hero__bg {
+    order: 2; margin: 8px auto 0;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 18%, #000 82%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0, #000 18%, #000 82%, transparent 100%);
+  }
+}
