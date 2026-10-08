@@ -16,25 +16,25 @@ const ITEMS: Item[] = [
       alt: "Tangkapan layar Neovarch Agent desktop: sesi chat bertema gelap dengan dua jawaban agen tentang struktur proyek",
       width: 1120,
       height: 700,
-      caption: "Desktop v1.2.1, sesi chat",
+      caption: "Desktop, sesi chat",
     },
   },
   {
     title: "Dikendalikan dari HP",
     body:
-      "Aktifkan Pengaturan ▸ Remote / Perangkat di PC, lalu pindai QR-nya dari aplikasi Android. HP tersambung ke port 9119 dengan token, lewat Wi‑Fi yang sama atau Tailscale/WireGuard. Aplikasi HP punya empat tab: Chat, Tugas (papan Kanban), Setujui (persetujuan perintah dengan notifikasi Android), dan PC.",
+      "Aktifkan Pengaturan ▸ Remote / Perangkat di PC, lalu pindai QR-nya dari aplikasi Android. HP tersambung ke port 9319 dengan token, lewat Wi‑Fi yang sama atau Tailscale/WireGuard. Aplikasi HP punya empat tab: Chat, Tugas (papan Kanban), Setujui (persetujuan perintah dengan notifikasi Android), dan PC.",
     img: {
       src: "/shots/pairing.webp",
       alt: "Tangkapan layar Pengaturan ▸ Remote / Perangkat: QR pairing, alamat LAN, dan token untuk HP",
-      width: 1060,
-      height: 704,
-      caption: "Desktop v1.2.1, Pengaturan ▸ Remote / Perangkat",
+      width: 1080,
+      height: 852,
+      caption: "Desktop v1.3.0, Pengaturan ▸ Remote / Perangkat, port 9319",
     },
   },
   {
-    title: "Memori, skill, dan tugas terjadwal",
+    title: "Memori dan skill",
     body:
-      "Agen menyimpan catatan tentang kamu dan proyekmu, dan catatan itu dibawa ke sesi berikutnya. Skill adalah instruksi tersimpan yang bisa dibuat agen sendiri setelah tugas yang rumit, lalu dipakai ulang. Menu Scheduled jobs menjalankan prompt pada jadwal cron, misalnya merangkum folder kerja setiap pagi.",
+      "Agen menyimpan catatan tentang kamu dan proyekmu, dan catatan itu dibawa ke sesi berikutnya. Skill adalah instruksi tersimpan yang bisa dibuat agen sendiri setelah tugas yang rumit, lalu dipakai ulang. Semuanya tersimpan di ~/.neovarch, terpisah dari instalasi agen lain di PC yang sama.",
     img: {
       src: "/art/feat-memory.webp",
       alt: "Ilustrasi dithering merah: kepala mecha berhalo di lorong gelap",
@@ -45,7 +45,7 @@ const ITEMS: Item[] = [
   {
     title: "Model pilihanmu, kunci API milikmu",
     body:
-      "Pilih penyedia dan model di Pengaturan ▸ Model: Nous Portal, OpenRouter, OpenAI, Anthropic, atau endpoint milikmu sendiri, misalnya server model lokal. Kunci API disimpan di PC kamu. Neovarch tidak punya server sendiri; percakapan hanya dikirim ke penyedia model yang kamu pilih.",
+      "Pilih penyedia dan model di Pengaturan ▸ Model: penyedia apa pun yang kompatibel dengan API OpenAI, seperti OpenRouter atau OpenAI, atau endpoint milikmu sendiri, misalnya server model lokal. Kunci API disimpan di PC kamu. Neovarch tidak punya server sendiri; percakapan hanya dikirim ke penyedia model yang kamu pilih.",
     img: {
       src: "/art/feat-models.webp",
       alt: "Ilustrasi dithering merah: deretan helm mecha di rak",

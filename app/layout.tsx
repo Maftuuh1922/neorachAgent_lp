@@ -31,7 +31,7 @@ const ogImage = asset("/art/og.jpg");
 
 const title = "Neovarch Agent: agen AI di PC kamu, dikendalikan dari HP";
 const description =
-  "Aplikasi desktop Windows dan Linux yang menjalankan Hermes Agent (MIT) di PC kamu, dengan aplikasi Android yang dipasangkan lewat QR di jaringan lokal. Kode terbuka.";
+  "Aplikasi desktop Windows dan Linux dengan core agen sendiri yang berjalan di PC kamu, dengan aplikasi Android yang dipasangkan lewat QR di jaringan lokal. Kode terbuka.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

@@ -10,9 +10,10 @@ export default function License() {
         </div>
         <div className="license__text">
           <p>
-            Aplikasi desktop Neovarch Agent diturunkan dari Hermes Desktop dan{" "}
-            <a href={HERMES_URL} target="_blank" rel="noopener noreferrer">Hermes Agent</a> karya Nous Research,
-            berlisensi MIT. Rincian atribusinya ada di{" "}
+            Core agen Neovarch ditulis sendiri dari nol, tanpa kode core Hermes Agent. Antarmuka desktopnya diturunkan dari
+            Hermes Desktop karya{" "}
+            <a href={HERMES_URL} target="_blank" rel="noopener noreferrer">Nous Research</a>, berlisensi MIT. Rincian
+            atribusinya ada di{" "}
             <a href={NOTICE_URL} target="_blank" rel="noopener noreferrer">desktop/NOTICE</a> dan{" "}
             <a href={LICENSE_URL} target="_blank" rel="noopener noreferrer">desktop/LICENSE</a>.
           </p>

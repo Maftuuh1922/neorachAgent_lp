@@ -1,4 +1,4 @@
-import { GITHUB_URL, HERMES_URL, RELEASE_URL, RELEASE_VERSION } from "@/lib/site";
+import { GITHUB_URL, RELEASE_URL, RELEASE_VERSION } from "@/lib/site";
 import Terminal from "./Terminal";
 import Shot from "./Shot";
 
@@ -12,10 +12,10 @@ export default function Hero() {
             Agen AI di PC kamu, dikendalikan dari&nbsp;HP
           </h1>
           <p className="lede">
-            Neovarch Agent adalah aplikasi desktop untuk Windows dan Linux yang menjalankan{" "}
-            <a href={HERMES_URL} target="_blank" rel="noopener noreferrer">Hermes Agent</a> (MIT, dari Nous
-            Research) langsung di PC kamu. Aplikasi Android-nya dipasangkan ke PC lewat QR di jaringan lokal,
-            lalu dipakai untuk chat, menyetujui perintah, dan melihat papan tugas. Semua kodenya terbuka di GitHub.
+            Neovarch Agent adalah aplikasi desktop untuk Windows dan Linux dengan core agen sendiri yang berjalan
+            langsung di PC kamu, dengan data terpisah di <code>~/.neovarch</code>. Aplikasi Android-nya dipasangkan ke PC
+            lewat QR di jaringan lokal, lalu dipakai untuk chat, menyetujui perintah, dan melihat papan tugas. Semua
+            kodenya terbuka di GitHub.
           </p>
           <div className="actions">
             <a className="btn btn--solid" href={RELEASE_URL} target="_blank" rel="noopener noreferrer">
