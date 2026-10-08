@@ -1,4 +1,4 @@
-import { GITHUB_URL, HERMES_URL, LICENSE_URL, NOTICE_URL } from "@/lib/site";
+import { GITHUB_URL, LICENSE_URL, NOTICE_URL } from "@/lib/site";
 
 export default function License() {
   return (
@@ -10,10 +10,8 @@ export default function License() {
         </div>
         <div className="license__text">
           <p>
-            Core agen Neovarch ditulis sendiri dari nol, tanpa kode core Hermes Agent. Antarmuka desktopnya diturunkan dari
-            Hermes Desktop karya{" "}
-            <a href={HERMES_URL} target="_blank" rel="noopener noreferrer">Nous Research</a>, berlisensi MIT. Rincian
-            atribusinya ada di{" "}
+            Neovarch Agent adalah perangkat lunak terbuka berlisensi MIT, dengan core agen yang ditulis sendiri.
+            Rincian lisensi dan atribusi ada di{" "}
             <a href={NOTICE_URL} target="_blank" rel="noopener noreferrer">desktop/NOTICE</a> dan{" "}
             <a href={LICENSE_URL} target="_blank" rel="noopener noreferrer">desktop/LICENSE</a>.
           </p>

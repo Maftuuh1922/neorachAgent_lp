@@ -32,7 +32,7 @@ export default function Hero() {
         <div className="hero__art">
           <Shot
             src="/art/hero-engraving.webp"
-            alt="Ilustrasi dithering merah: mecha putih tulang berhalo duduk di samping PC desktop raksasa"
+            alt="Ilustrasi merah: maskot Neovarch, perempuan berambut bob dengan halo, memegang HP yang tersambung ke mecha di depan PC"
             width={1024}
             height={1024}
             priority
