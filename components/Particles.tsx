@@ -69,7 +69,7 @@ export default function Particles() {
         else if (p.y > h + 8) p.y = -8;
         const tw = 0.25 + 0.75 * (0.5 + 0.5 * Math.sin(p.phase + t * p.speed));
         ctx.globalAlpha = tw * 0.45;
-        ctx.fillStyle = p.red ? "#EE1C1C" : "#0A0A0A";
+        ctx.fillStyle = p.red ? "#EE1C1C" : "#F4F2ED";
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fill();

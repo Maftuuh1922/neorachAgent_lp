@@ -12,7 +12,6 @@ import Reveal from "@/components/Reveal";
 export default function Page() {
   return (
     <div className="page" id="top">
-      <div className="grain" aria-hidden="true" />
       <div className="frame" aria-hidden="true" />
       <Ticker />
       <Navbar />
