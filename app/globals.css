@@ -498,9 +498,32 @@ img, .shot, .shot__art { -webkit-user-drag: none; user-select: none; -webkit-tou
 @keyframes footRise { from { opacity: 0; transform: translateY(60px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .footer__img, .footer__word { animation: none; } }
 
-/* sheet starts flush with the top of the screen: no rounded corner showing red at the top */
-.page { margin-top: 0; border-top-left-radius: 0; border-top-right-radius: 0; }
-.nav { border-radius: 0; }
+/* sheet: rounded, with even red margin on every side so the corner reads clean */
+.page { margin: clamp(10px, 2.6vw, 40px); border-radius: 22px; }
+.nav { border-radius: 22px 22px 0 0; }
 
 /* shorter footer */
 .footer--reveal { min-height: clamp(420px, 62svh, 640px); }
+
+/* ---------- curtain reveal: the page sheet slides up off a pinned footer ---------- */
+.page { timeline-scope: --curtain; }
+.page > main {
+  position: relative; z-index: 1;
+  background: #fff;
+  border-radius: 0 0 22px 22px;
+  box-shadow: 0 24px 48px -12px rgba(26, 7, 7, 0.45);
+  view-timeline: --curtain block;
+}
+.footer--reveal { position: sticky; bottom: 0; z-index: 0; margin-top: -22px; padding-top: 22px; }
+@supports (animation-timeline: view()) {
+  .footer__img {
+    animation: footFocus linear both;
+    animation-timeline: --curtain; animation-range: exit 0% exit 100%;
+  }
+  .footer__word {
+    animation: footRise linear both;
+    animation-timeline: --curtain; animation-range: exit 35% exit 100%;
+  }
+}
+@keyframes footFocus { from { filter: blur(14px) brightness(0.55); transform: scale(1.2); } to { filter: none; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .footer__img, .footer__word { animation: none; } }
