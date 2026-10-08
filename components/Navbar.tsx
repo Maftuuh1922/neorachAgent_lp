@@ -9,7 +9,7 @@ export default function Navbar() {
       <div className="wrap nav__row">
         <a className="nav__brand" href={`${home}#top`}>
           <img className="nav__logo" src={asset("/art/agent-mark.webp")} alt="" width={256} height={256} aria-hidden="true" />
-          <span className="nav__name">Neovarch Agent</span>
+          <img className="nav__name" src={asset("/art/name.webp")} alt="Neovarch Agent" width={560} height={289} />
         </a>
         <nav className="nav__links" aria-label="Navigasi utama">
           <a href={`${home}#fitur`}>Fitur</a>

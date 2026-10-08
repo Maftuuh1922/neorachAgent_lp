@@ -3,7 +3,6 @@ import { IBM_Plex_Sans, Instrument_Serif, JetBrains_Mono } from "next/font/googl
 import { asset } from "@/lib/site";
 import "@fontsource/cinzel-decorative/700.css";
 import "@fontsource/cinzel/600.css";
-import "@fontsource/italiana/400.css";
 import "./globals.css";
 
 // Condensed display serif for titles.
