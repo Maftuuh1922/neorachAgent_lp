@@ -39,9 +39,9 @@
 .nav__logo { display: block; width: 24px; height: 32px; }
 .nav__brand { color: #b0121a; }
 .nav__logo { width: 46px; height: 46px; object-fit: contain; border-radius: 50%; }
-.nav__name { display: block; width: auto; height: 30px; margin-left: 4px; }
-@media (max-width: 480px) { .nav__logo { width: 38px; height: 38px; } .nav__name { height: 20px; } }
-@media (max-width: 360px) { .nav__name { height: 17px; } }
+.nav__name { display: block; width: auto; height: 36px; }
+@media (max-width: 480px) { .nav__logo { width: 38px; height: 38px; } .nav__name { height: 27px; } }
+@media (max-width: 360px) { .nav__name { height: 23px; } }
 .nav__links a, .nav__menu a:not(.btn) { font-family: "Cinzel", serif; font-weight: 600; letter-spacing: .06em; }
 .nav__links a:not(.btn) { color: #b0121a; }
 .nav__burger { color: #b0121a; }
