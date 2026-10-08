@@ -28,31 +28,24 @@ export default function Hero() {
           <p className="meta meta--label">Atau pasang lewat terminal</p>
           <Terminal />
         </div>
-        <div className="hcard">
-          <div
-            className="hero__bg"
-            role="img"
-            aria-label="Animasi maskot Neovarch: perempuan berambut bob dengan halo, memegang HP yang tersambung ke mecha di depan PC"
-          >
-            <video
-              className="hero__vid"
-              aria-hidden="true"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
-              disablePictureInPicture
-              controlsList="nodownload noplaybackrate noremoteplayback"
-              poster={asset("/art/hero-live.webp")}
-            >
-              <source src={asset("/art/hero-loop.webm")} type="video/webm" />
-              <source src={asset("/art/hero-loop.mp4")} type="video/mp4" />
-            </video>
-            <span className="shot__shield" aria-hidden="true" />
+        <div className="tix" aria-hidden="true">
+          <div className="tix__card tix__card--orb">
+            <div className="tix__bar"><span>NEOVARCH AGENT</span><span>OPEN SOURCE</span></div>
+            <div className="tix__lines" />
+            <p className="tix__mark"><small>AGEN AI</small>NEOVARCH<small>{RELEASE_VERSION}</small></p>
+            <img className="tix__orb" src={asset("/art/hero-orb.webp")} alt="" />
+            <p className="tix__big">WINDOWS · LINUX<br /><span>ANDROID</span> PAIRING QR</p>
+            <p className="tix__fine">Core agen berjalan langsung di PC kamu. Data terpisah di ~/.neovarch. HP cukup jadi remote untuk chat dan persetujuan.</p>
+            <div className="tix__foot"><span>NEOVARCH</span><span className="tix__star">✳</span><span>GITHUB</span></div>
           </div>
-          <div className="hcard__tab" aria-label="Platform">
-            <span>Windows</span><span>Linux</span><span>Android</span><span className="is-soon">macOS</span>
+          <div className="tix__card tix__card--art">
+            <img className="tix__art" src={asset("/art/hero-ticket.webp")} alt="" />
+            <div className="tix__bar"><span>NEOVARCH AGENT</span><span>{RELEASE_VERSION}</span></div>
+            <p className="tix__mark"><small>AGEN AI</small>NEOVARCH<small>PC + HP</small></p>
+            <div className="tix__spacer" />
+            <p className="tix__big">DARI HP <span>KE PC</span><br />JARINGAN LOKAL</p>
+            <p className="tix__fine">Pasangkan lewat QR, setujui perintah, pantau papan tugas.</p>
+            <div className="tix__foot tix__foot--code"><span className="tix__barcode" /><span>{RELEASE_VERSION}</span></div>
           </div>
         </div>
       </div>
