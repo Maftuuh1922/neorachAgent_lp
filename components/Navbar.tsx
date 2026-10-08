@@ -1,10 +1,11 @@
-import { DOCS_URL, GITHUB_URL, RELEASE_URL, RELEASE_VERSION } from "@/lib/site";
+import { DOCS_URL, GITHUB_URL, RELEASE_URL, RELEASE_VERSION, asset } from "@/lib/site";
 
 export default function Navbar() {
   return (
     <header className="nav">
       <div className="wrap nav__row">
         <a className="nav__brand" href="#top">
+          <span className="nav__head" aria-hidden="true" style={{ backgroundImage: `url(${asset("/art/head.webp")})` }} />
           Neovarch Agent
         </a>
         <nav className="nav__links" aria-label="Navigasi utama">

@@ -31,10 +31,10 @@ export default function Hero() {
         </div>
         <div className="hero__art">
           <Shot
-            src="/art/hero-engraving.webp"
+            src="/art/hero-anim.gif"
             alt="Ilustrasi merah: maskot Neovarch, perempuan berambut bob dengan halo, memegang HP yang tersambung ke mecha di depan PC"
-            width={1024}
-            height={1024}
+            width={768}
+            height={768}
             priority
           />
         </div>

@@ -1,13 +1,15 @@
 import { asset } from "@/lib/site";
 
-/** Flat image with a 1px border, no rounding. Product screenshots and dithered art both use it. */
+/**
+ * Artwork is painted as a CSS background under a blank shield, so there is no <img>
+ * to drag, long-press or "Save image as".
+ */
 export default function Shot({
   src,
   alt,
   width,
   height,
   caption,
-  priority = false,
 }: {
   src: string;
   alt: string;
@@ -17,17 +19,15 @@ export default function Shot({
   priority?: boolean;
 }) {
   return (
-    <figure className="shot">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={asset(src)}
-        alt={alt}
-        width={width}
-        height={height}
-        loading={priority ? "eager" : "lazy"}
-        fetchPriority={priority ? "high" : undefined}
-        decoding="async"
-      />
+    <figure className="shot reveal">
+      <div
+        className="shot__art"
+        role="img"
+        aria-label={alt}
+        style={{ backgroundImage: `url(${asset(src)})`, aspectRatio: `${width} / ${height}` }}
+      >
+        <span className="shot__shield" aria-hidden="true" />
+      </div>
       {caption ? <figcaption>{caption}</figcaption> : null}
     </figure>
   );

@@ -13,7 +13,6 @@ export const GITHUB_URL = APP_REPO_URL;
 export const ISSUES_URL = `${APP_REPO_URL}/issues`;
 export const LICENSE_URL = `${APP_REPO_URL}/blob/main/desktop/LICENSE`;
 export const NOTICE_URL = `${APP_REPO_URL}/blob/main/desktop/NOTICE`;
-export const HERMES_URL = "https://github.com/NousResearch/hermes-agent";
 
 /** Real one-line installers (scripts live in the app repo; npm launcher ships as a release asset). */
 export const INSTALL_COMMANDS = {
