@@ -629,3 +629,18 @@ img, .shot, .shot__art { -webkit-user-drag: none; user-select: none; -webkit-tou
 
 .hero__dots { background: transparent; padding: 0; }
 .hero__dots img { image-rendering: pixelated; }
+
+/* ---------- red dot-matrix art straight on the white page: no panels, frames or dark ground ---------- */
+.shot__art--dots {
+  background-color: transparent; background-size: contain; background-position: center;
+  border: 0; border-radius: 0; box-shadow: none;
+}
+.footer--reveal { background: #fff; color: var(--text); }
+.footer--reveal::after { background: linear-gradient(to bottom, rgba(255,255,255,0) 45%, rgba(255,255,255,0.92) 82%); }
+.footer__img { background: center 20% / cover no-repeat; }
+.footer__word { color: var(--red); }
+.footer--reveal .footer__row { border-top: 1px solid var(--line); background: #fff; }
+.footer--reveal .footer__name { color: var(--text); }
+.footer--reveal .footer__links a { color: var(--muted); }
+.footer--reveal .footer__links a:hover { color: var(--red); }
+@keyframes footFocus { from { filter: blur(14px); opacity: 0.4; transform: scale(1.2); } to { filter: none; opacity: 1; transform: none; } }

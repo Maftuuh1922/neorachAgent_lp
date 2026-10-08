@@ -38,8 +38,8 @@ const ITEMS: Item[] = [
     img: {
       src: "/art/feat-memory.webp",
       alt: "Ilustrasi merah: tengkorak mecha berhalo retak yang terhubung ke peta catatan",
-      width: 1000,
-      height: 806,
+      width: 1320,
+      height: 1062,
     },
   },
   {
@@ -49,8 +49,8 @@ const ITEMS: Item[] = [
     img: {
       src: "/art/feat-models.webp",
       alt: "Ilustrasi merah: lima helm mecha di satu rak, satu terpilih dengan halo",
-      width: 1000,
-      height: 806,
+      width: 1200,
+      height: 966,
     },
   },
 ];
