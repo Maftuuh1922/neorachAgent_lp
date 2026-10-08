@@ -75,18 +75,12 @@ git add -A && git commit -m "v2: Hermes-faithful red/white rebuild" && git push
 Vercel auto-deploy dari GitHub. Preview publik saat ini: server port 8091
 menyajikan `out/` (rebuild otomatis tampil di URL tunnel).
 
-## V4 revisi (2026-10-08) — light theme + ice-blue + optimasi gambar
-- Tema dibalik total: background PUTIH (#fff/#f8fafc), teks navy gelap (#0a1628), aksen ICE-BLUE (#1b7fc1; glow luminous #7fd4ff hanya di atas panel gelap). NOL MERAH di CSS maupun artwork.
-- Artwork: 12 PNG (32MB) → hue-shift red→ice-blue via ffmpeg + WebP q80 → 12 WebP total 2.1MB (tiap file < 250KB). PNG lama dihapus.
-- Artwork globe (bg hitam) tampil sebagai kartu/panel gelap rounded + shadow di atas halaman putih: hero art card, appfig frame, portal banner card, OS cards, feature card tops.
-- Hero light: headline serif navy + "sleeps." ice-blue, CTA pill biru, terminal jadi kartu navy gelap, partikel canvas biru/navy.
-- Ticker + footer: navy gelap (#0a1628/#05070d). Nav: putih blur.
-- Perf: hero `priority` + `fetchPriority="high"` + `<link rel="preload">`; gambar bawah-fold lazy (default next/image); width/height eksplisit; og image WebP.
-- Animasi v3 dipertahankan (spin/pulse/partikel/ticker/hover, reduced-motion).
-- Verifikasi: build sukses, screenshot desktop+mobile+full-page OK, tidak ada merah, kontras terbaca.
+## V4 (2026-10-08) — dibatalkan
+Tema terang dengan aksen biru dari PR #1 dibatalkan atas koreksi Bos; lihat V5.
 
-## V4.1 (2026-10-08) — artwork ice-blue asli + perbaikan layout
-- Semua artwork di `public/art/` dibuat ulang (bukan hue-shift): ukiran/etsa klasik duotone ice-blue (#1b7fc1) + navy (#0a1628) di atas putih (hero, 6 fitur) atau di atas navy (kartu OS, portal, footer, og). Tema: agen desktop + HP sebagai remote, coding, memori, otomasi, model bebas, open source. Nol merah. WebP < 300 KB; `og.jpg` 1200x630.
-- `eva_hero.webp` dihapus (tidak dirujuk). `eva_office/pairing/remote.webp` masih dirujuk komponen lama yang tidak dipakai (Setup/Collaboration/Workflow), jadi dibiarkan.
-- Playfair Display kini self-hosted via `next/font/google` (`--font-playfair`), fallback stack Didone tetap.
-- Unduhan menunjuk ke rilis v1.2.1 (`lib/site.ts` → `RELEASE_URL`); macOS ditandai "Segera". Perintah instal asli: install.sh (Linux), install.ps1 (Windows), npm tgz.
+## V5 (2026-10-08) — kembali ke MERAH + artwork anime + perbaikan layout
+- Palet (koreksi Bos): duotone merah/putih — merah elektrik `#EE1C1C`, off-white `#F4F2ED`, frame/ticker/footer merah gelap `#8F0A0A`, tinta near-black `#0A0A0A`, bone `#F2EDE4`. NOL biru di CSS/komponen/artwork (scan hex + scan piksel bersih). Tema ice-blue v4 dibatalkan.
+- Artwork (koreksi Bos): BUKAN ukiran klasik. Gaya anime gouache cel 1990-an "seperti Evangelion": mecha bone-white ORIGINAL (kepala oval tanpa wajah, visor celah vertikal, otot & kabel merah terbuka, cincin halo), langit merah/hitam, maskot gadis bob pendek ber-halo; dirender duotone halftone merah/bone/near-black. Bukan unit/karakter EVA asli, tanpa teks. Referensi gaya: `eva_*.webp` (disimpan).
+- 12 WebP di `public/art/` (< 300 KB) + `og.jpg` 1200x630 (judul ditambahkan via PIL, Playfair). Nama file lama dipertahankan (mis. `hero-engraving.webp`, `footer-marble.webp`) agar path tidak berubah.
+- Playfair Display self-hosted via `next/font/google` (`--font-playfair`).
+- Unduhan → rilis v1.2.1 (`lib/site.ts` → `RELEASE_URL`); macOS "Segera". Perintah instal asli: install.sh (Linux), install.ps1 (Windows), npm tgz.

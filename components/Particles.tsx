@@ -10,12 +10,12 @@ type Particle = {
   vy: number;
   phase: number;
   speed: number;
-  blue: boolean;
+  red: boolean;
 };
 
 const COUNT = 60;
 
-/** Ambient drifting ice-blue/navy particles with twinkle, over the light hero.
+/** Ambient drifting red/near-black particles with twinkle, over the light hero.
  *  Renders nothing when prefers-reduced-motion is set. */
 export default function Particles() {
   const ref = useRef<HTMLCanvasElement>(null);
@@ -43,7 +43,7 @@ export default function Particles() {
         vy: (Math.random() - 0.5) * 0.18 - 0.06,
         phase: Math.random() * Math.PI * 2,
         speed: 0.5 + Math.random() * 1.6,
-        blue: Math.random() < 0.62,
+        red: Math.random() < 0.62,
       }));
     };
 
@@ -69,7 +69,7 @@ export default function Particles() {
         else if (p.y > h + 8) p.y = -8;
         const tw = 0.25 + 0.75 * (0.5 + 0.5 * Math.sin(p.phase + t * p.speed));
         ctx.globalAlpha = tw * 0.45;
-        ctx.fillStyle = p.blue ? "#1b7fc1" : "#0a1628";
+        ctx.fillStyle = p.red ? "#EE1C1C" : "#0A0A0A";
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fill();

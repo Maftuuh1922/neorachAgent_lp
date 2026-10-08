@@ -15,7 +15,7 @@ export default function FooterCta() {
         </p>
         <div className="cta__btns" data-reveal>
           <a
-            className="pill pill--blue"
+            className="pill pill--red"
             href={INSTALL_URL}
             target="_blank"
             rel="noopener noreferrer"

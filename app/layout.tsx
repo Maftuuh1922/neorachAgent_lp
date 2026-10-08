@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     description:
       "Open-source AI agents on your PC, commanded from your phone. Free forever, MIT licensed.",
     type: "website",
-    images: [{ url: ogImage, width: 1200, height: 630, alt: "Neovarch Agent — engraved hand holding a phone that commands a desktop computer" }],
+    images: [{ url: ogImage, width: 1200, height: 630, alt: "Neovarch Agent — an anime girl with a halo raises her phone to command a giant bone-white mecha" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#0a1628",
+  themeColor: "#8F0A0A",
   colorScheme: "light",
 };
 

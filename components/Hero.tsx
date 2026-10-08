@@ -26,7 +26,7 @@ export default function Hero() {
           </p>
           <div className="hero__ctas" data-reveal>
             <a
-              className="pill pill--blue"
+              className="pill pill--red"
               href={INSTALL_URL}
               target="_blank"
               rel="noopener noreferrer"
@@ -51,14 +51,14 @@ export default function Hero() {
         <figure className="hero__art" data-reveal>
           <Image
             src={asset("/art/hero-engraving.webp")}
-            alt="Classical ice-blue engraving: a six-armed titan works a desktop computer while a small figure on a cloud directs him with a phone"
+            alt="Anime illustration: a giant bone-white mecha with a halo, cabled to a skyscraper-sized desktop PC, answers a girl raising her phone from a rooftop"
             width={1024}
             height={1024}
             priority
             fetchPriority="high"
             sizes="(max-width: 1024px) 92vw, 46vw"
           />
-          <figcaption className="mono hero__cap">Fig. 00 — the desktop titan</figcaption>
+          <figcaption className="mono hero__cap">Fig. 00 — the desktop giant</figcaption>
         </figure>
       </div>
     </section>

@@ -30,7 +30,7 @@ export default function Navbar() {
             Community
           </a>
           <a
-            className="pill pill--blue"
+            className="pill pill--red"
             href={INSTALL_URL}
             target="_blank"
             rel="noopener noreferrer"

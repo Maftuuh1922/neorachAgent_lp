@@ -24,7 +24,7 @@ export default function AppSection() {
           <div className="appfig__frame">
             <Image
               src={asset("/art/feat-remote.webp")}
-              alt="Engraving: a traveller on a hilltop raises a phone; beams of light carry orders across a valley to a temple housing a desktop computer"
+              alt="Anime illustration: a short-bob girl with a halo sends an order from her phone across a rainy city to a giant bone-white mecha"
               width={1264}
               height={848}
               sizes="(max-width: 1080px) 100vw, 1080px"
