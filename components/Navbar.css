@@ -41,4 +41,11 @@
 .nav__links a, .nav__menu a:not(.btn) { font-family: "Cinzel", serif; font-weight: 600; letter-spacing: .06em; }
 .nav__links a:not(.btn) { color: #b0121a; }
 .nav__burger { color: #b0121a; }
-.hero .title { font-family: "Cinzel Decorative", "Cinzel", serif; font-weight: 700; letter-spacing: .01em; line-height: 1.12; color: #b0121a; }
+.hero .title { color: #b0121a; }
+
+/* Burger only on small screens; desktop shows inline links */
+.nav__burger, .nav__menu { display: none; }
+@media (max-width: 720px) {
+  .nav__burger { display: inline-flex; }
+  .nav__menu { display: flex; }
+}
