@@ -608,3 +608,16 @@ img, .shot, .shot__art { -webkit-user-drag: none; user-select: none; -webkit-tou
   .hcard__tab::before { left: -13px; background: radial-gradient(14px 10px at 0 0, transparent 98%, #fff 100%); }
   .hcard__tab::after { right: -13px; background: radial-gradient(14px 10px at 100% 0, transparent 98%, #fff 100%); }
 }
+
+/* footer wordmark: centered, sitting clear above the divider; art fully sharp by page end */
+.footer__word { text-align: center; padding: 0 12px; margin: 0 0 clamp(18px, 4vw, 40px); font-size: clamp(52px, 17vw, 280px); line-height: 1; }
+@supports (animation-timeline: view()) {
+  .footer__img { animation-range: exit 0% exit 50%; }
+  .footer__word { animation-range: exit 20% exit 50%; }
+}
+
+/* desktop: card sits beside the text instead of below it */
+@media (min-width: 961px) {
+  .hero__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; }
+  .hero__grid .hcard { margin-top: 0; aspect-ratio: 4 / 5; }
+}
