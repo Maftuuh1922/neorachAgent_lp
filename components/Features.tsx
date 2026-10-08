@@ -37,9 +37,9 @@ const ITEMS: Item[] = [
       "Agen menyimpan catatan tentang kamu dan proyekmu, dan catatan itu dibawa ke sesi berikutnya. Skill adalah instruksi tersimpan yang bisa dibuat agen sendiri setelah tugas yang rumit, lalu dipakai ulang. Semuanya tersimpan di ~/.neovarch, terpisah dari instalasi agen lain di PC yang sama.",
     img: {
       src: "/art/feat-memory.webp",
-      alt: "Ilustrasi merah: tengkorak mecha berhalo retak yang terhubung ke peta catatan",
-      width: 1320,
-      height: 1062,
+      alt: "Ilustrasi sketsa merah: mata android dengan berkas cahaya silang dan percikan data",
+      width: 1152,
+      height: 928,
     },
   },
   {
@@ -48,9 +48,9 @@ const ITEMS: Item[] = [
       "Pilih penyedia dan model di Pengaturan ▸ Model: penyedia apa pun yang kompatibel dengan API OpenAI, seperti OpenRouter atau OpenAI, atau endpoint milikmu sendiri, misalnya server model lokal. Kunci API disimpan di PC kamu. Neovarch tidak punya server sendiri; percakapan hanya dikirim ke penyedia model yang kamu pilih.",
     img: {
       src: "/art/feat-models.webp",
-      alt: "Ilustrasi merah: lima helm mecha di satu rak, satu terpilih dengan halo",
-      width: 1200,
-      height: 966,
+      alt: "Ilustrasi sketsa merah: wajah android dengan bidikan target di satu mata",
+      width: 1152,
+      height: 928,
     },
   },
 ];
