@@ -22,7 +22,7 @@
   --gutter: clamp(20px, 4vw, 64px);
 }
 
-* { box-sizing: border-box; border-radius:0; }
+* { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
 html, body { margin: 0; padding: 0; }
@@ -299,3 +299,13 @@ code { font-family: var(--font-mono); font-size: 0.9em; }
   html { scroll-behavior: auto; }
   .btn { transition: none; }
 }
+
+/* rounded system */
+.btn, .btn--sm { border-radius: 10px; }
+.shot img { border-radius: 14px; }
+.term { border-radius: 14px; overflow: hidden; }
+.frame { border-radius: 0; }
+img { border-radius: 14px; }
+.nav img, .label img { border-radius: 0; }
+.dl__cmd, .dl__file { border-radius: 10px; }
+.term__tab:first-child { border-top-left-radius: 14px; }
