@@ -142,8 +142,12 @@ code { font-family: var(--font-mono); font-size: 0.9em; }
 
 /* ---------- nav ---------- */
 .nav {
-  position: relative;
-  background: var(--ground);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
 }
 .nav__row {
@@ -226,7 +230,7 @@ code { font-family: var(--font-mono); font-size: 0.9em; }
 
 /* ---------- sections ---------- */
 .section { padding: clamp(64px, 8vw, 112px) 0; border-top: 1px solid var(--line); }
-.section--alt { background: var(--ground-2); }
+.section--alt { background: rgba(255, 236, 234, 0.55); }
 .section__intro { margin: 18px 0 0; max-width: 60ch; color: #4A2E2B; }
 
 /* features: 2-column alternating grid, no boxes */
@@ -321,7 +325,7 @@ img { border-radius: 14px; }
 .page {
   max-width: 1240px;
   margin: clamp(10px, 2.6vw, 40px) auto;
-  background: var(--ground);
+  background: rgba(255, 255, 255, 0.82);
   border-radius: 22px;
   overflow: clip;
   image-rendering: auto;
