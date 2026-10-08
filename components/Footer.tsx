@@ -19,12 +19,6 @@ export default function Footer() {
           <a href={REPO_URL} target="_blank" rel="noopener noreferrer">Kode halaman ini</a>
         </nav>
       </div>
-      <script
-        dangerouslySetInnerHTML={{
-          __html:
-            "(function(){var f=document.querySelector('.footer--reveal');if(!f)return;var t=0;function u(){t=0;var r=f.getBoundingClientRect(),h=window.innerHeight,p=Math.min(1,Math.max(0,(h-r.top)/Math.min(r.height,h)));f.style.setProperty('--p',p.toFixed(3))}function s(){if(!t){t=1;requestAnimationFrame(u)}}addEventListener('scroll',s,{passive:true});addEventListener('resize',s);u()})();",
-        }}
-      />
     </footer>
   );
 }
