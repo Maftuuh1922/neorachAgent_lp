@@ -3,7 +3,15 @@
 import { useState } from "react";
 import { Check, Copy } from "lucide-react";
 
-export default function CopyCommand({ command }: { command: string }) {
+export default function CopyCommand({
+  command,
+  prompt = "$",
+  label = "install command",
+}: {
+  command: string;
+  prompt?: string;
+  label?: string;
+}) {
   const [copied, setCopied] = useState(false);
 
   const copy = async () => {
@@ -29,16 +37,16 @@ export default function CopyCommand({ command }: { command: string }) {
     <div className="cmd">
       <code className="cmd__text mono">
         <span className="term__p" aria-hidden="true">
-          $
+          {prompt}
         </span>{" "}
         {command}
       </code>
-      <button type="button" className="cmd__copy mono" onClick={copy} aria-label={copied ? "Copied install command" : "Copy install command"}>
+      <button type="button" className="cmd__copy mono" onClick={copy} aria-label={copied ? `Copied ${label}` : `Copy ${label}`}>
         {copied ? <Check size={14} aria-hidden="true" /> : <Copy size={14} aria-hidden="true" />}
         <span>{copied ? "COPIED" : "COPY"}</span>
       </button>
       <span className="sr-only" aria-live="polite">
-        {copied ? "Install command copied to clipboard" : ""}
+        {copied ? `${label[0].toUpperCase()}${label.slice(1)} copied to clipboard` : ""}
       </span>
     </div>
   );

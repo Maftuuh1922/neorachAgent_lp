@@ -1,7 +1,5 @@
 import CopyCommand from "./CopyCommand";
-import { INSTALL_CMD, INSTALL_URL, NAV_LINKS } from "@/lib/site";
-
-const PLATFORMS = ["Windows", "Linux", "macOS"] as const;
+import { DOWNLOADS, INSTALL_CMDS, NAV_LINKS } from "@/lib/site";
 
 export default function Footer() {
   return (
@@ -31,23 +29,31 @@ export default function Footer() {
           <div className="fcol">
             <p className="fcol__h mono">DOWNLOAD</p>
             <ul className="fcol__list mono">
-              {PLATFORMS.map((p) => (
-                <li key={p}>
+              {DOWNLOADS.map((d) => (
+                <li key={d.label}>
                   <a
-                    href={INSTALL_URL}
+                    href={d.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`Download Neovarch for ${p} (opens in a new tab)`}
+                    aria-label={`Download Neovarch for ${d.label}${d.soon ? ", coming soon" : ""} (opens in a new tab)`}
                   >
-                    {p}
+                    {d.label}
                   </a>
+                  {d.soon && <span className="fcol__soon">SOON</span>}
                 </li>
               ))}
             </ul>
           </div>
           <div className="fcol fcol--install">
             <p className="fcol__h mono">INSTALL</p>
-            <CopyCommand command={INSTALL_CMD} />
+            <ul className="cmds">
+              {INSTALL_CMDS.map((c) => (
+                <li key={c.id} className="cmds__item">
+                  <p className="cmds__label mono">{c.label}</p>
+                  <CopyCommand command={c.command} prompt={c.prompt} label={`${c.label.split(" ")[0].toLowerCase()} install command`} />
+                </li>
+              ))}
+            </ul>
           </div>
           <div className="fcol fcol--legal mono">
             <p className="fcol__h">LEGAL</p>
