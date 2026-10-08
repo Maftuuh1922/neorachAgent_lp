@@ -627,5 +627,5 @@ img, .shot, .shot__art { -webkit-user-drag: none; user-select: none; -webkit-tou
   .hero__ascii { margin-top: 32px; max-width: 420px; }
 }
 
-.hero__dots { background: #000; padding: clamp(10px, 2vw, 22px); }
+.hero__dots { background: transparent; padding: 0; }
 .hero__dots img { image-rendering: pixelated; }
