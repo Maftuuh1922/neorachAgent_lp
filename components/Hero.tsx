@@ -10,6 +10,9 @@ export default function Hero() {
         aria-label="Animasi maskot Neovarch: perempuan berambut bob dengan halo, memegang HP yang tersambung ke mecha di depan PC"
         style={{ backgroundImage: `url(${asset("/art/hero-live.webp")})` }}
       >
+        <span className="hero__kf hero__kf--r" aria-hidden="true" style={{ backgroundImage: `url(${asset("/art/hero-swayr.webp")})` }} />
+        <span className="hero__kf hero__kf--l" aria-hidden="true" style={{ backgroundImage: `url(${asset("/art/hero-swayl.webp")})` }} />
+        <span className="hero__kf hero__kf--blink" aria-hidden="true" style={{ backgroundImage: `url(${asset("/art/hero-blink.webp")})` }} />
         <span className="hero__glitch hero__glitch--a" aria-hidden="true" />
         <span className="hero__glitch hero__glitch--b" aria-hidden="true" />
         <span className="hero__scan" aria-hidden="true" />

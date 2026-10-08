@@ -19,7 +19,7 @@
   --font-sans: var(--font-plex), "IBM Plex Sans", system-ui, sans-serif;
   --font-mono: var(--font-jb), "JetBrains Mono", ui-monospace, monospace;
   --frame: 0px;
-  --gutter: clamp(28px, 6vw, 80px);
+  --gutter: clamp(34px, 8vw, 88px);
 }
 
 * { box-sizing: border-box; }
@@ -192,7 +192,7 @@ code { font-family: var(--font-mono); font-size: 0.9em; }
 .hero__bg {
   position: absolute; inset: 0; z-index: -1; overflow: hidden;
   background: right center / contain no-repeat;
-  opacity: 0.42;
+  opacity: 0.55;
   mix-blend-mode: multiply;
   image-rendering: pixelated;
   -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 14%, #000 72%, transparent 100%);
@@ -305,7 +305,7 @@ code { font-family: var(--font-mono); font-size: 0.9em; }
 /* ---------- responsive ---------- */
 @media (max-width: 960px) {
   .hero__grid { grid-template-columns: 1fr; }
-  .hero__bg { background-position: center top; background-size: cover; opacity: 0.2; }
+  .hero__bg { background-position: center top; background-size: cover; opacity: 0.34; }
   .feats { grid-template-columns: 1fr; }
   .feat--right { flex-direction: column; margin-top: 0; }
   .dl { grid-template-columns: 1fr; gap: 56px; }
@@ -334,7 +334,7 @@ img { border-radius: 14px; }
 /* ---------- white sheet on red distorted ground ---------- */
 .page {
   max-width: 1240px;
-  margin: clamp(10px, 2.6vw, 40px) auto;
+  margin: clamp(10px, 2.6vw, 40px) clamp(14px, 4vw, 40px);
   background: rgba(255, 255, 255, 0.72);
   -webkit-backdrop-filter: blur(16px) saturate(1.1);
   backdrop-filter: blur(16px) saturate(1.1);
@@ -429,3 +429,17 @@ img, .shot, .shot__art { -webkit-user-drag: none; user-select: none; -webkit-tou
   100% { transform: translate3d(-10px, -110vh, 0); opacity: 0; }
 }
 @media (prefers-reduced-motion: reduce) { .hero__p { animation: none; } }
+
+/* frame-by-frame motion: hair sways right, then left, then a blink */
+.hero__kf {
+  position: absolute; inset: 0; opacity: 0; pointer-events: none;
+  background-position: inherit; background-size: inherit; background-repeat: no-repeat;
+  animation: 9s ease-in-out infinite;
+}
+.hero__kf--r { animation-name: kfR; }
+.hero__kf--l { animation-name: kfL; }
+.hero__kf--blink { animation-name: kfBlink; animation-timing-function: steps(1); }
+@keyframes kfR { 0%, 14% { opacity: 0; } 22%, 31% { opacity: 1; } 39%, 100% { opacity: 0; } }
+@keyframes kfL { 0%, 44% { opacity: 0; } 52%, 61% { opacity: 1; } 69%, 100% { opacity: 0; } }
+@keyframes kfBlink { 0%, 81% { opacity: 0; } 81.5% { opacity: 1; } 83.2%, 100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .hero__kf { animation: none; } }
