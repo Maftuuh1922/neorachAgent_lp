@@ -8,8 +8,11 @@ export default function Hero() {
         className="hero__bg"
         role="img"
         aria-label="Animasi maskot Neovarch: perempuan berambut bob dengan halo, memegang HP yang tersambung ke mecha di depan PC"
-        style={{ backgroundImage: `url(${asset("/art/hero-anim.gif")})` }}
+        style={{ backgroundImage: `url(${asset("/art/hero-live.webp")})` }}
       >
+        <span className="hero__glitch hero__glitch--a" aria-hidden="true" />
+        <span className="hero__glitch hero__glitch--b" aria-hidden="true" />
+        <span className="hero__scan" aria-hidden="true" />
         <span className="shot__shield" aria-hidden="true" />
       </div>
       <div className="wrap hero__grid">
