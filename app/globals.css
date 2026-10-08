@@ -437,3 +437,20 @@ img, .shot, .shot__art { -webkit-user-drag: none; user-select: none; -webkit-tou
   object-fit: contain; object-position: right center;
   pointer-events: none; image-rendering: pixelated;
 }
+
+/* hero: video beside the text, never under it */
+.hero__bg {
+  left: auto; right: 0; width: 46%;
+  opacity: 1; mix-blend-mode: normal;
+  -webkit-mask-image: none; mask-image: none;
+}
+.hero__vid { object-fit: contain; object-position: right center; }
+.hero__grid { grid-template-columns: minmax(0, 52%); }
+@media (max-width: 960px) {
+  .hero__bg {
+    position: relative; inset: auto; width: 100%; aspect-ratio: 1 / 1; z-index: 0;
+    opacity: 1; margin: 0 auto 8px; max-width: 520px;
+  }
+  .hero__vid { object-fit: contain; object-position: center; }
+  .hero__grid { grid-template-columns: 1fr; }
+}
