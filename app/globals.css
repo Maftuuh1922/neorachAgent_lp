@@ -345,9 +345,8 @@ img { border-radius: 14px; }
 .nav { border-radius: 22px 22px 0 0; }
 .nav__brand { display: inline-flex; align-items: center; gap: 10px; }
 .nav__head {
-  width: 30px; height: 30px; border-radius: 50%;
+  width: 34px; height: 34px; border-radius: 50%;
   background: #3A0505 center / cover no-repeat;
-  outline: 1.5px solid var(--red); outline-offset: 2px;
   image-rendering: pixelated;
 }
 
@@ -463,3 +462,7 @@ img, .shot, .shot__art { -webkit-user-drag: none; user-select: none; -webkit-tou
     mask-image: linear-gradient(to bottom, transparent 0, #000 18%, #000 82%, transparent 100%);
   }
 }
+
+/* drop the paper-white around the clip: white multiplies into the page */
+.hero__bg { mix-blend-mode: multiply; background: none; }
+.hero__vid { mix-blend-mode: multiply; }
