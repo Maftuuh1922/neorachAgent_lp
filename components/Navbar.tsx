@@ -8,7 +8,7 @@ export default function Navbar() {
     <header className="nav">
       <div className="wrap nav__row">
         <a className="nav__brand" href={`${home}#top`}>
-          <span className="nav__head" aria-hidden="true" style={{ backgroundImage: `url(${asset("/art/head.webp")})` }} />
+          <img className="nav__logo" src={asset("/art/logo.svg")} alt="" width={24} height={32} aria-hidden="true" />
           Neovarch Agent
         </a>
         <nav className="nav__links" aria-label="Navigasi utama">

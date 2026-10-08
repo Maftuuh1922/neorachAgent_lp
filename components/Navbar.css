@@ -34,3 +34,11 @@
 .nav__menu a:not(.btn):hover { background: rgba(176,18,24,.08); color: #b0121a; }
 .nav__menu .btn { margin-top: 6px; text-align: center; justify-content: center; }
 @media (max-width: 720px) { .nav__links { display: none !important; } }
+
+/* Brand type + logo */
+.nav__logo { display: block; width: 24px; height: 32px; }
+.nav__brand { font-family: "Cinzel Decorative", "Cinzel", serif; font-weight: 700; color: #b0121a; letter-spacing: .04em; }
+.nav__links a, .nav__menu a:not(.btn) { font-family: "Cinzel", serif; font-weight: 600; letter-spacing: .06em; }
+.nav__links a:not(.btn) { color: #b0121a; }
+.nav__burger { color: #b0121a; }
+.hero .title { font-family: "Cinzel Decorative", "Cinzel", serif; font-weight: 700; letter-spacing: .01em; line-height: 1.12; color: #b0121a; }
