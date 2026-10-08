@@ -194,7 +194,6 @@ code { font-family: var(--font-mono); font-size: 0.9em; }
   background: right center / contain no-repeat;
   opacity: 0.72;
   mix-blend-mode: multiply;
-  image-rendering: pixelated;
   -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 14%, #000 72%, transparent 100%);
   mask-image: linear-gradient(to bottom, transparent 0, #000 14%, #000 72%, transparent 100%);
   user-select: none; -webkit-user-drag: none; -webkit-touch-callout: none;
@@ -376,7 +375,7 @@ img, .shot, .shot__art { -webkit-user-drag: none; user-select: none; -webkit-tou
 .dl__col .shot__art { aspect-ratio: 16 / 10 !important; background-position: left top; }
 
 /* ---------- hero live wallpaper ---------- */
-.hero__bg { animation: breathe 18s ease-in-out infinite alternate; transform-origin: 70% 40%; }
+
 @keyframes breathe { from { transform: scale(1) translate3d(0,0,0); } to { transform: scale(1.06) translate3d(-1.5%, 1%, 0); } }
 .hero__glitch {
   position: absolute; inset: 0;
