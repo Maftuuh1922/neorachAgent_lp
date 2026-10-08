@@ -7,9 +7,9 @@ export default function Portal() {
       <div className="portal__bg" aria-hidden="true">
         <Image
           src={asset("/art/portal-banner.webp")}
-          alt="Wide luminous wireframe panorama of glowing ice-blue globes and orbital rings on near-black background"
-          width={1600}
-          height={686}
+          alt=""
+          width={1584}
+          height={672}
           sizes="100vw"
         />
       </div>
@@ -20,7 +20,7 @@ export default function Portal() {
             Free <em className="serif-it" style={{ textTransform: "none" }}>forever.</em>
           </h2>
           <p>
-            Neorach Agent is <strong>MIT open source</strong>. No pricing tiers,
+            Neovarch Agent is <strong>MIT open source</strong>. No pricing tiers,
             no subscriptions, no cloud lock-in — your infrastructure, your
             rules, your agents.
           </p>

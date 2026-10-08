@@ -1,4 +1,4 @@
-import { GithubIcon, XIcon } from "@/components/icons";
+import { GithubIcon } from "@/components/icons";
 import { DOCS_URL, GITHUB_URL, COMMUNITY_URL, INSTALL_URL } from "@/lib/site";
 
 export default function Navbar() {
@@ -11,18 +11,17 @@ export default function Navbar() {
             Docs
           </a>
         </nav>
-        <a className="nav__brand" href="#top" aria-label="Neorach Agent — home">
-          <span className="b1">NEORACH</span>
-          <span className="b2">AGENT</span>
+        <div className="nav__brand">
+          <a className="nav__home" href="#top" aria-label="Neovarch Agent — home">
+            <span className="b1">NEOVARCH</span>
+            <span className="b2">AGENT</span>
+          </a>
           <span className="nav__social">
-            <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" aria-label="Neovarch Agent on GitHub">
               <GithubIcon size={15} />
             </a>
-            <a href={COMMUNITY_URL} target="_blank" rel="noopener noreferrer" aria-label="Community">
-              <XIcon size={15} />
-            </a>
           </span>
-        </a>
+        </div>
         <nav className="nav__links nav__links--right" aria-label="Secondary">
           <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
             GitHub

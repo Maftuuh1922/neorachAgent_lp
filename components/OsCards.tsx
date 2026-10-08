@@ -1,33 +1,45 @@
 import Image from "next/image";
-import { asset, INSTALL_URL } from "@/lib/site";
+import { asset, RELEASE_URL, RELEASE_VERSION } from "@/lib/site";
 
-const CARDS = [
+type Card = {
+  os: string;
+  ver: string;
+  title: string;
+  img: string;
+  files: string;
+  available: boolean;
+};
+
+const CARDS: Card[] = [
   {
     os: "Mac OS",
-    ver: "macOS 12+",
+    ver: "macOS",
     title: "For the Mac faithful.",
     img: "/art/os-mac.webp",
-    alt: "Ice-blue abstract light-ray texture on dark background",
+    files: "",
+    available: false,
   },
   {
     os: "Windows",
-    ver: "Windows 10/11",
+    ver: "Windows 10/11 · x64",
     title: "For the PC majority.",
     img: "/art/os-windows.webp",
-    alt: "Ice-blue topographic wave texture on dark background",
+    files: "setup.exe · zip",
+    available: true,
   },
   {
     os: "Linux",
-    ver: "Any distro",
+    ver: "x64 · any distro",
     title: "For the tinkerers.",
     img: "/art/os-linux.webp",
-    alt: "Ice-blue swirling cloud texture on dark background",
+    files: "AppImage · deb · tar.gz",
+    available: true,
   },
 ];
 
 export default function OsCards() {
   return (
-    <section className="section--paper" aria-labelledby="os-title" style={{ borderTop: "1px solid var(--line-ice)" }}>
+    <section className="section--paper section--ruled" id="download" aria-labelledby="os-title">
       <div className="wrap sec-head">
         <span className="mono kicker" data-reveal>
           — Get started
@@ -38,25 +50,49 @@ export default function OsCards() {
       </div>
       <div className="wrap">
         <div className="oscards">
-          {CARDS.map((c) => (
-            <a
-              key={c.os}
-              className="oscard"
-              href={INSTALL_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-reveal
-            >
-              <span className="oscard__bg" aria-hidden="true">
-                <Image src={asset(c.img)} alt="" width={1200} height={750} sizes="(max-width: 680px) 100vw, 33vw" loading="lazy" />
-              </span>
-              <span className="oscard__name">{c.os}</span>
-              <span className="mono oscard__ver">{c.ver}</span>
-              <span className="serif-it oscard__title">{c.title}</span>
-              <span className="pill pill--white">Install for {c.os}</span>
-            </a>
-          ))}
+          {CARDS.map((c) => {
+            const inner = (
+              <>
+                <span className="oscard__bg" aria-hidden="true">
+                  <Image src={asset(c.img)} alt="" width={1200} height={746} sizes="(max-width: 680px) 92vw, 33vw" />
+                </span>
+                <span className="mono oscard__name">{c.os}</span>
+                <span className="mono oscard__ver">{c.ver}</span>
+                <span className="serif-it oscard__title">{c.title}</span>
+                <span className="mono oscard__files">
+                  {c.available ? `${RELEASE_VERSION} · ${c.files}` : "Not in this release"}
+                </span>
+                {c.available ? (
+                  <span className="pill pill--white">Install for {c.os}</span>
+                ) : (
+                  <span className="pill pill--soon">Segera</span>
+                )}
+              </>
+            );
+            return c.available ? (
+              <a
+                key={c.os}
+                className="oscard"
+                href={RELEASE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-reveal
+              >
+                {inner}
+              </a>
+            ) : (
+              <div key={c.os} className="oscard oscard--soon" aria-disabled="true" data-reveal>
+                {inner}
+              </div>
+            );
+          })}
         </div>
+        <p className="mono osnote" data-reveal>
+          Phone remote: Android APK on the{" "}
+          <a href={RELEASE_URL} target="_blank" rel="noopener noreferrer">
+            {RELEASE_VERSION} release
+          </a>
+        </p>
       </div>
     </section>
   );

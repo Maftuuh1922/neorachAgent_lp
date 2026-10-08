@@ -20,7 +20,7 @@ export default function Hero() {
             </em>
           </h1>
           <p className="hero__sub" data-reveal>
-            Neorach Agent is an open-source AI workforce that lives on your PC.
+            Neovarch Agent is an open-source AI workforce that lives on your PC.
             Give orders from your phone — your agents code, research, and ship
             while you live your life.
           </p>
@@ -32,7 +32,7 @@ export default function Hero() {
               rel="noopener noreferrer"
             >
               <TerminalIcon size={15} aria-hidden="true" />
-              Install Neorach
+              Install Neovarch
             </a>
             <a
               className="pill pill--outline-b"
@@ -51,14 +51,14 @@ export default function Hero() {
         <figure className="hero__art" data-reveal>
           <Image
             src={asset("/art/hero-engraving.webp")}
-            alt="Luminous ice-blue and white wireframe globe with glowing orbital rings and light orbs on near-black background"
-            width={1600}
-            height={1600}
+            alt="Classical ice-blue engraving: a six-armed titan works a desktop computer while a small figure on a cloud directs him with a phone"
+            width={1024}
+            height={1024}
             priority
             fetchPriority="high"
-            sizes="(max-width: 1024px) 100vw, 50vw"
+            sizes="(max-width: 1024px) 92vw, 46vw"
           />
-          <figcaption className="mono hero__cap">Fig. 00 — the globe</figcaption>
+          <figcaption className="mono hero__cap">Fig. 00 — the desktop titan</figcaption>
         </figure>
       </div>
     </section>

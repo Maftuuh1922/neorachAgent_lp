@@ -15,7 +15,7 @@ export default function AppSection() {
         </h2>
         <p data-reveal>
           Your phone becomes the command center. The agent core runs on your PC —
-          Windows, Linux, or macOS — and a staff of tireless agents executes
+          Windows or Linux (macOS segera) — and a staff of tireless agents executes
           your orders around the clock.
         </p>
       </div>
@@ -24,9 +24,9 @@ export default function AppSection() {
           <div className="appfig__frame">
             <Image
               src={asset("/art/feat-remote.webp")}
-              alt="Luminous ice-blue wireframe globe sending command beams to orbiting satellites on near-black background"
-              width={1040}
-              height={2352}
+              alt="Engraving: a traveller on a hilltop raises a phone; beams of light carry orders across a valley to a temple housing a desktop computer"
+              width={1264}
+              height={848}
               sizes="(max-width: 1080px) 100vw, 1080px"
             />
           </div>

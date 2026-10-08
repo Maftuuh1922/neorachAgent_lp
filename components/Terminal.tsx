@@ -3,11 +3,10 @@
 import { useState } from "react";
 import { Copy, Check } from "lucide-react";
 
-const COMMANDS: Record<string, string> = {
-  macOS: "curl -fsSL https://install.neovarch.ai | sh",
-  Linux: "curl -fsSL https://install.neovarch.ai | sh",
-  Windows: "irm https://install.neovarch.ai | iex",
-};
+import { INSTALL_COMMANDS } from "@/lib/site";
+
+const COMMANDS: Record<string, string> = INSTALL_COMMANDS;
+const PROMPTS: Record<string, string> = { Linux: "$", Windows: "PS>", npm: "$" };
 
 const TABS = Object.keys(COMMANDS);
 
@@ -42,7 +41,7 @@ export default function Terminal() {
       </div>
       <div className="term__body">
         <code className="term__cmd">
-          <span className="prompt">$</span>
+          <span className="prompt">{PROMPTS[tab]}</span>
           {COMMANDS[tab]}
         </code>
         <button

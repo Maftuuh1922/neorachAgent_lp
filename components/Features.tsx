@@ -6,7 +6,7 @@ const FEATURES = [
     n: "1",
     verb: "Ship",
     img: "/art/feat-code.webp",
-    alt: "Luminous ice-blue wireframe globe erupting in an energy burst on near-black background",
+    alt: "Engraving: a clockwork scholar types at a desktop computer by lamplight as code scrolls pour from the screen",
     title: "Autonomous coding",
     desc: "Agents that write, test, and ship code while you sleep. Review the diff in the morning.",
   },
@@ -14,7 +14,7 @@ const FEATURES = [
     n: "2",
     verb: "Remember",
     img: "/art/feat-memory.webp",
-    alt: "Luminous wireframe globe wrapped in a glowing ice-blue network lattice on near-black background",
+    alt: "Engraving: a memory palace — an archive cabinet of countless drawers with an owl, a lamp and a nautilus shell",
     title: "Long memory",
     desc: "Every session remembered. Your agents pick up exactly where they left off.",
   },
@@ -22,7 +22,7 @@ const FEATURES = [
     n: "3",
     verb: "Automate",
     img: "/art/feat-automation.webp",
-    alt: "Glowing orbital rings mechanism turning around a luminous wireframe globe on near-black background",
+    alt: "Engraving: a gear-driven automaton operating a desktop computer, mouse and file drawer on its own",
     title: "Total automation",
     desc: "Browser, terminal, files — agents operate your PC like a tireless night staff.",
   },
@@ -30,7 +30,7 @@ const FEATURES = [
     n: "4",
     verb: "Command",
     img: "/art/feat-remote.webp",
-    alt: "Luminous wireframe globe sending ice-blue command beams to small orbiting satellites on near-black background",
+    alt: "Engraving: a traveller raises a phone and beams carry orders across a valley to a distant desktop computer",
     title: "Mobile command",
     desc: "Pair once. Direct the whole office from your pocket, from anywhere.",
   },
@@ -38,7 +38,7 @@ const FEATURES = [
     n: "5",
     verb: "Choose",
     img: "/art/feat-models.webp",
-    alt: "Three glowing ice-blue and white wireframe orbs floating in a row on near-black background",
+    alt: "Engraving: four marble busts on pedestals cabled to one computer while a hand chooses which to plug in",
     title: "Any model",
     desc: "Plug in your favorite models. Open weights welcome, switch anytime.",
   },
@@ -46,7 +46,7 @@ const FEATURES = [
     n: "6",
     verb: "Liberate",
     img: "/art/feat-opensource.webp",
-    alt: "Luminous wireframe globe with an open padlock of light orbiting it and sunrise rays on near-black background",
+    alt: "Engraving: open iron gates with an unlocked padlock, an open book and doves flying toward a rising sun",
     title: "Open source",
     desc: "MIT licensed. Your infrastructure, your rules — free forever.",
   },
@@ -54,13 +54,13 @@ const FEATURES = [
 
 export default function Features() {
   return (
-    <section className="section--paper" aria-labelledby="feat-title" style={{ borderTop: "1px solid var(--line-ice)" }}>
+    <section className="section--white section--ruled" aria-labelledby="feat-title">
       <div className="wrap sec-head">
         <span className="mono kicker" data-reveal>
           — Capabilities
         </span>
         <h2 id="feat-title" className="display" data-reveal>
-          Everything <em>an office needs.</em>
+          Everything <em>an office&nbsp;needs.</em>
         </h2>
         <p data-reveal>
           Six crafts, one commander. Each agent is a specialist; together they
@@ -75,8 +75,8 @@ export default function Features() {
                 <Image
                   src={asset(f.img)}
                   alt={f.alt}
-                  width={800}
-                  height={656}
+                  width={1000}
+                  height={806}
                   sizes="(max-width: 680px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
               </div>

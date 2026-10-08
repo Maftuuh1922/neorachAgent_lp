@@ -84,3 +84,9 @@ menyajikan `out/` (rebuild otomatis tampil di URL tunnel).
 - Perf: hero `priority` + `fetchPriority="high"` + `<link rel="preload">`; gambar bawah-fold lazy (default next/image); width/height eksplisit; og image WebP.
 - Animasi v3 dipertahankan (spin/pulse/partikel/ticker/hover, reduced-motion).
 - Verifikasi: build sukses, screenshot desktop+mobile+full-page OK, tidak ada merah, kontras terbaca.
+
+## V4.1 (2026-10-08) — artwork ice-blue asli + perbaikan layout
+- Semua artwork di `public/art/` dibuat ulang (bukan hue-shift): ukiran/etsa klasik duotone ice-blue (#1b7fc1) + navy (#0a1628) di atas putih (hero, 6 fitur) atau di atas navy (kartu OS, portal, footer, og). Tema: agen desktop + HP sebagai remote, coding, memori, otomasi, model bebas, open source. Nol merah. WebP < 300 KB; `og.jpg` 1200x630.
+- `eva_hero.webp` dihapus (tidak dirujuk). `eva_office/pairing/remote.webp` masih dirujuk komponen lama yang tidak dipakai (Setup/Collaboration/Workflow), jadi dibiarkan.
+- Playfair Display kini self-hosted via `next/font/google` (`--font-playfair`), fallback stack Didone tetap.
+- Unduhan menunjuk ke rilis v1.2.1 (`lib/site.ts` → `RELEASE_URL`); macOS ditandai "Segera". Perintah instal asli: install.sh (Linux), install.ps1 (Windows), npm tgz.

@@ -1,5 +1,5 @@
 const ITEMS = [
-  "Neorach Agent",
+  "Neovarch Agent",
   "Open Source",
   "MIT License",
   "Your PC is the brain",
@@ -19,7 +19,7 @@ export default function Ticker() {
     </div>
   );
   return (
-    <div className="ticker" aria-label="Neorach Agent highlights">
+    <div className="ticker" aria-label="Neovarch Agent highlights">
       <div className="ticker__track">
         {chunk}
         {chunk}

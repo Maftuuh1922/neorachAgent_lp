@@ -4,14 +4,14 @@ export default function FooterCta() {
   return (
     <section className="cta" aria-labelledby="cta-title">
       <div className="cta__wm" aria-hidden="true">
-        <span>NEORACH</span>
+        <span>NEOVARCH</span>
       </div>
       <div className="cta__inner">
         <h2 id="cta-title" className="display" data-reveal>
           Take <em>command.</em>
         </h2>
         <p data-reveal>
-          Install Neorach Agent tonight — wake up to finished work.
+          Install Neovarch Agent tonight — wake up to finished work.
         </p>
         <div className="cta__btns" data-reveal>
           <a
@@ -20,7 +20,7 @@ export default function FooterCta() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Install Neorach
+            Install Neovarch
           </a>
           <a
             className="pill pill--outline-b"
