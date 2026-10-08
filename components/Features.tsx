@@ -48,7 +48,7 @@ const ITEMS: Item[] = [
       "Pilih penyedia dan model di Pengaturan ▸ Model: penyedia apa pun yang kompatibel dengan API OpenAI, seperti OpenRouter atau OpenAI, atau endpoint milikmu sendiri, misalnya server model lokal. Kunci API disimpan di PC kamu. Neovarch tidak punya server sendiri; percakapan hanya dikirim ke penyedia model yang kamu pilih.",
     img: {
       src: "/art/feat-models.webp",
-      alt: "Ilustrasi sketsa merah: wajah android dengan bidikan target di satu mata",
+      alt: "Ilustrasi sketsa merah: sosok android berambut panjang dengan garis cahaya vertikal",
       width: 1152,
       height: 928,
     },
