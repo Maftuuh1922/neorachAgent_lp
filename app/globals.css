@@ -1,20 +1,20 @@
 /* ============================================================
    NEOVARCH AGENT — plain editorial landing
-   Ground #0A0606 / #0D0606, panels #140808, text #F4F2ED,
+   Ground #FFFFFF / #FFF4F3, panels #FFF4F3, text #1A0707,
    red #EE1C1C, frame #8F0A0A. Flat colours only: no colour blends,
    no glows, no shadows. Square corners everywhere.
    ============================================================ */
 
 :root {
-  --ground: #0A0606;
-  --ground-2: #0D0606;
-  --panel: #140808;
-  --text: #F4F2ED;
-  --muted: #A99E98;
+  --ground: #FFFFFF;
+  --ground-2: #FFF4F3;
+  --panel: #FFF4F3;
+  --text: #1A0707;
+  --muted: #7A5E5A;
   --red: #EE1C1C;
   --frame-red: #8F0A0A;
-  --line: #2A1A18;
-  --line-strong: #4A2E2B;
+  --line: #F2D3D0;
+  --line-strong: #E6B3AE;
   --font-display: var(--font-serif), "Instrument Serif", Georgia, serif;
   --font-sans: var(--font-plex), "IBM Plex Sans", system-ui, sans-serif;
   --font-mono: var(--font-jb), "JetBrains Mono", ui-monospace, monospace;
@@ -37,7 +37,7 @@ body {
   overflow-x: hidden;
 }
 
-::selection { background: var(--red); color: var(--text); }
+::selection { background: var(--red); color: #FFFFFF; }
 
 img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; }
@@ -93,7 +93,7 @@ code { font-family: var(--font-mono); font-size: 0.9em; }
   margin: 26px 0 0;
   max-width: 56ch;
   font-size: 17px;
-  color: #D9D3CC;
+  color: #4A2E2B;
 }
 
 .meta {
@@ -121,7 +121,7 @@ code { font-family: var(--font-mono); font-size: 0.9em; }
   border: 1px solid var(--red);
   transition: background-color 120ms, color 120ms;
 }
-.btn--solid { background: var(--red); color: var(--text); }
+.btn--solid { background: var(--red); color: #FFFFFF; }
 .btn--solid:hover { background: var(--ground); color: var(--red); }
 .btn--sm { height: 30px; padding: 0 10px; font-size: 12px; }
 
@@ -220,7 +220,7 @@ code { font-family: var(--font-mono); font-size: 0.9em; }
 /* ---------- sections ---------- */
 .section { padding: clamp(64px, 8vw, 112px) 0; border-top: 1px solid var(--line); }
 .section--alt { background: var(--ground-2); }
-.section__intro { margin: 18px 0 0; max-width: 60ch; color: #D9D3CC; }
+.section__intro { margin: 18px 0 0; max-width: 60ch; color: #4A2E2B; }
 
 /* features: 2-column alternating grid, no boxes */
 .feats {
@@ -234,7 +234,7 @@ code { font-family: var(--font-mono); font-size: 0.9em; }
 .feat--right { flex-direction: column-reverse; margin-top: clamp(0px, 8vw, 120px); }
 .feat__num { margin: 0; font-family: var(--font-mono); font-size: 12px; color: var(--red); }
 .feat__title { margin: 6px 0 0; font-family: var(--font-display); font-weight: 400; font-size: clamp(26px, 2.4vw, 32px); line-height: 1.1; }
-.feat__body { margin: 10px 0 0; max-width: 52ch; color: #D9D3CC; }
+.feat__body { margin: 10px 0 0; max-width: 52ch; color: #4A2E2B; }
 
 /* getting started */
 .dl {
@@ -254,7 +254,7 @@ code { font-family: var(--font-mono); font-size: 0.9em; }
   font-family: var(--font-mono); font-size: 12px; overflow-wrap: anywhere;
 }
 .dl__size { color: var(--muted); white-space: nowrap; }
-.dl__note { margin: 12px 0 0; font-size: 14px; color: #D9D3CC; }
+.dl__note { margin: 12px 0 0; font-size: 14px; color: #4A2E2B; }
 .dl__cmd {
   display: block; margin-top: 12px; padding: 10px 12px;
   background: var(--panel); border: 1px solid var(--line-strong);
@@ -267,7 +267,7 @@ code { font-family: var(--font-mono); font-size: 0.9em; }
 
 /* licence */
 .license { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: clamp(24px, 5vw, 80px); }
-.license__text p { margin: 0 0 14px; max-width: 60ch; color: #D9D3CC; }
+.license__text p { margin: 0 0 14px; max-width: 60ch; color: #4A2E2B; }
 .license__text p:first-child { margin-top: 36px; }
 
 /* footer */
