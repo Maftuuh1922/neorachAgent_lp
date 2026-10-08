@@ -28,8 +28,6 @@ export default function Hero() {
           <p className="meta meta--label">Atau pasang lewat terminal</p>
           <Terminal />
         </div>
-      </div>
-      <div className="wrap">
         <div className="hcard">
           <div
             className="hero__bg"
