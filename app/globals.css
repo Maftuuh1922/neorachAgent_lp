@@ -573,3 +573,23 @@ img, .shot, .shot__art { -webkit-user-drag: none; user-select: none; -webkit-tou
   .hcard .hero__vid { object-fit: cover; object-position: 40% center; }
   .hcard__tab { gap: 12px; padding: 10px 16px 8px; font-size: 10.5px; }
 }
+
+/* hero card v2: art fills the frame, low wide notch with long soft curves (closer to the reference) */
+.hcard { background: #fff; aspect-ratio: 16 / 10; }
+.hcard .hero__vid { object-fit: cover; object-position: center 35%; mix-blend-mode: normal; }
+.hcard__tab {
+  padding: 7px clamp(28px, 5vw, 64px) 5px; border-radius: 26px 26px 0 0;
+  gap: clamp(16px, 3vw, 40px); font-size: clamp(10px, 1vw, 12.5px);
+}
+.hcard__tab::before, .hcard__tab::after { width: 34px; height: 26px; }
+.hcard__tab::before { left: -33px; background: radial-gradient(34px 26px at 0 0, transparent 98%, #fff 100%); }
+.hcard__tab::after { right: -33px; background: radial-gradient(34px 26px at 100% 0, transparent 98%, #fff 100%); }
+.hcard__note { bottom: clamp(44px, 6vw, 72px); }
+@media (max-width: 960px) {
+  .hcard { aspect-ratio: 4 / 5; }
+  .hcard .hero__vid { object-position: 40% center; }
+  .hcard__tab { padding: 6px 18px 4px; gap: 12px; font-size: 10px; border-radius: 20px 20px 0 0; }
+  .hcard__tab::before, .hcard__tab::after { width: 26px; height: 20px; }
+  .hcard__tab::before { left: -25px; background: radial-gradient(26px 20px at 0 0, transparent 98%, #fff 100%); }
+  .hcard__tab::after { right: -25px; background: radial-gradient(26px 20px at 100% 0, transparent 98%, #fff 100%); }
+}
