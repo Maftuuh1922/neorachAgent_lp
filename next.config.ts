@@ -6,6 +6,8 @@ const basePath = process.env.BASE_PATH ?? "";
 const nextConfig: NextConfig = {
   output: "export",
   basePath,
+  // Every route is written as <route>/index.html (needed for /docs/<section>/<page>/ on static hosts).
+  trailingSlash: true,
   images: { unoptimized: true },
   env: { NEXT_PUBLIC_BASE_PATH: basePath },
 };

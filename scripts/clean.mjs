@@ -19,7 +19,7 @@ function walk(dir, acc = []) {
 // 1. remove runtime JS and RSC payload files
 for (const f of walk(OUT)) {
   if (f.endsWith(".js") && f.includes(`${path.sep}${OLD}${path.sep}`)) fs.rmSync(f);
-  else if (f.endsWith(".txt") && !f.endsWith("robots.txt")) fs.rmSync(f);
+  else if (f.endsWith(".txt") && !f.endsWith("robots.txt") && !f.endsWith("llms.txt")) fs.rmSync(f);
 }
 // 2. rename the asset dir
 const oldDir = path.join(OUT, OLD);
