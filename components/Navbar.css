@@ -38,8 +38,10 @@
 /* Brand type + logo */
 .nav__logo { display: block; width: 24px; height: 32px; }
 .nav__brand { color: #b0121a; }
-.nav__wordmark { display: block; width: auto; height: 26px; }
-@media (max-width: 480px) { .nav__wordmark { height: 20px; } }
+.nav__wordmark { display: block; width: auto; height: 46px; }
+.nav__agent { font-family: "Cinzel", serif; font-weight: 600; font-size: 15px; letter-spacing: .22em; text-transform: uppercase; color: #b0121a; align-self: center; margin-left: 2px; }
+.nav__logo { width: 30px; height: 40px; }
+@media (max-width: 480px) { .nav__wordmark { height: 34px; } .nav__agent { font-size: 12px; letter-spacing: .16em; } .nav__logo { width: 24px; height: 32px; } }
 .nav__links a, .nav__menu a:not(.btn) { font-family: "Cinzel", serif; font-weight: 600; letter-spacing: .06em; }
 .nav__links a:not(.btn) { color: #b0121a; }
 .nav__burger { color: #b0121a; }
