@@ -28,9 +28,8 @@ export default function Hero() {
           <p className="meta meta--label">Atau pasang lewat terminal</p>
           <Terminal />
         </div>
-        <div className="hero__ascii" aria-hidden="true">
-          <span className="hero__lines" />
-          <img src={asset("/art/hero-globe.webp")} alt="" width={1100} height={1100} />
+        <div className="hero__ascii hero__dots" aria-hidden="true">
+          <img src={asset("/art/hero-dots.webp")} alt="" width={1080} height={1446} />
         </div>
       </div>
     </section>
