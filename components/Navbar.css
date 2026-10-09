@@ -53,3 +53,13 @@
   .nav__burger { display: inline-flex; }
   .nav__menu { display: flex; }
 }
+
+/* ID / EN language switch: same type as the nav links, current language underlined. */
+.nav .nav__lang { font-size: 12px; display: inline-flex; align-items: center; gap: 6px; font-family: "Cinzel", serif; font-weight: 600; letter-spacing: .06em; color: #b0121a; }
+.nav .nav__lang a { color: #b0121a; text-decoration: none; opacity: .55; padding: 2px 0; }
+.nav .nav__lang a:hover { opacity: 1; }
+.nav .nav__lang a[aria-current] { opacity: 1; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+.nav .nav__lang-sep { opacity: .4; }
+.nav .nav__menu .nav__lang--menu { padding: 6px 12px; gap: 10px; border-top: 1px solid rgba(176,18,24,.15); margin-top: 4px; padding-top: 12px; }
+.nav .nav__menu .nav__lang--menu a { padding: 4px 2px; border-radius: 0; color: #b0121a; }
+.nav .nav__menu .nav__lang--menu a:hover { background: none; }
