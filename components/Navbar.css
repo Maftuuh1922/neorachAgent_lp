@@ -38,7 +38,7 @@
 /* Brand type + logo */
 .nav__logo { display: block; width: 24px; height: 32px; }
 .nav__brand { color: #b0121a; }
-.nav__logo { width: 50px; height: 50px; object-fit: contain; border-radius: 0; }
+.nav .nav__logo { width: 50px; height: 50px; object-fit: cover; border-radius: 24%; flex: none; }
 .nav__name { display: block; width: auto; height: 34px; }
 @media (max-width: 480px) { .nav__logo { width: 40px; height: 40px; } .nav__name { height: 24px; } }
 @media (max-width: 360px) { .nav__logo { width: 34px; height: 34px; } .nav__name { height: 20px; } }
