@@ -28,7 +28,7 @@ const mono = JetBrains_Mono({
 });
 
 // Absolute origin for social preview URLs. Override with SITE_URL at build time.
-export const siteUrl = process.env.SITE_URL ?? "https://neorachagent.vercel.app";
+export const siteUrl = process.env.SITE_URL ?? "https://neovarchagent.web.id";
 const ogImage = asset("/art/og.jpg");
 
 
@@ -65,6 +65,14 @@ export function buildMetadata(lang: Lang, home = false): Metadata {
   return {
     robots: { index: true, follow: true, googleBot: { index: true, follow: true, noimageindex: true } },
     metadataBase: new URL(siteUrl),
+    icons: {
+      icon: [
+        { url: asset("/favicon.ico"), sizes: "any" },
+        { url: asset("/icon.png"), type: "image/png", sizes: "512x512" },
+        { url: asset("/icon-192.png"), type: "image/png", sizes: "192x192" },
+      ],
+      apple: [{ url: asset("/apple-touch-icon.png"), sizes: "180x180" }],
+    },
     title,
     description,
     ...(home

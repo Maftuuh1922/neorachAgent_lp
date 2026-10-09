@@ -7,20 +7,20 @@ type Item = { img: Img; id: Text; en: Text };
 
 const ITEMS: Item[] = [
   {
-    img: { src: "/shots/chat.webp", width: 1120, height: 700 },
+    img: { src: "/shots/chat.webp", width: 1440, height: 900 },
     id: {
       title: "Chat yang menjalankan alat di PC",
       body:
         "Tulis tugas dalam bahasa biasa. Agen membaca dan menyunting file, menjalankan perintah terminal, dan menjelaskan langkahnya sebelum bertindak. Setiap sesi tersimpan di sidebar dan bisa dibuka lagi. Perintah yang berisiko menunggu persetujuanmu.",
-      alt: "Tangkapan layar Neovarch Agent desktop: sesi chat bertema gelap dengan dua jawaban agen tentang struktur proyek",
-      caption: "Desktop, sesi chat",
+      alt: "Tangkapan layar Neovarch Agent desktop: sesi chat bertema gelap, dengan laporan.md yang sedang disunting agen tampil langsung di panel kanan",
+      caption: "Desktop, sesi chat dengan file yang sedang disunting di panel kanan",
     },
     en: {
       title: "Chat that runs tools on your PC",
       body:
         "Describe the task in plain language. The agent reads and edits files, runs terminal commands, and explains each step before it acts. Every session is saved in the sidebar so you can pick it up again, and risky commands wait for your approval.",
-      alt: "Screenshot of Neovarch Agent desktop: a dark-themed chat session with two agent replies about a project's structure",
-      caption: "Desktop, chat session",
+      alt: "Screenshot of Neovarch Agent desktop: a dark-themed chat session, with the laporan.md file the agent is editing shown live in the right panel",
+      caption: "Desktop, chat session with the file being edited in the right panel",
     },
   },
   {

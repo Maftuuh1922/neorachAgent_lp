@@ -4,7 +4,7 @@ import type { Lang } from "@/lib/rootShell";
 
 const COPY = {
   id: { main: "Navigasi utama", menu: "Menu", burger: "Buka atau tutup menu", features: "Fitur", office: "Kantor", download: "Unduh", lang: "Bahasa" },
-  en: { main: "Main navigation", menu: "Menu", burger: "Open or close menu", features: "Features", office: "Office", download: "Download", lang: "Language" },
+  en: { main: "Main navigation", menu: "Menu", burger: "Open or close menu", features: "Features", office: "Kantor", download: "Download", lang: "Language" },
 } as const;
 
 /** ID / EN switch. `docs` pages pass no lang and link to the two landing pages. */
@@ -32,6 +32,7 @@ export default function Navbar({ lang = "id" }: { lang?: Lang }) {
         </a>
         <nav className="nav__links" aria-label={t.main}>
           <a href={`${home}#fitur`}>{t.features}</a>
+          <a href={`${home}#kantor`}>{t.office}</a>
           <a href={`${home}#mulai`}>{t.download}</a>
           <a className="nav__keep" href={asset("/docs/")}>Docs</a>
           <a className="nav__keep nav__gh" href={GITHUB_URL} target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -43,6 +44,7 @@ export default function Navbar({ lang = "id" }: { lang?: Lang }) {
         </label>
         <nav className="nav__menu" aria-label={t.menu}>
           <a href={`${home}#fitur`}>{t.features}</a>
+          <a href={`${home}#kantor`}>{t.office}</a>
           <a href={`${home}#mulai`}>{t.download}</a>
           <a href={asset("/docs/")}>Docs</a>
           <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">GitHub</a>

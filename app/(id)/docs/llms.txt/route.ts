@@ -7,7 +7,7 @@ export const dynamic = "force-static";
 // or GitHub Pages when the site is built for a sub-path (BASE_PATH).
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const origin =
-  (process.env.SITE_URL ?? (basePath ? "https://maftuuh1922.github.io" : "https://neorachagent.vercel.app")) + basePath;
+  (process.env.SITE_URL ?? (basePath ? "https://maftuuh1922.github.io" : "https://neovarchagent.web.id")) + basePath;
 
 export function GET() {
   const lines: string[] = [

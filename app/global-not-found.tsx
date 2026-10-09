@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { RootShell } from "@/lib/rootShell";
+import { RootShell, buildMetadata } from "@/lib/rootShell";
 import Navbar from "@/components/Navbar";
 import { asset } from "@/lib/site";
 
-export const metadata: Metadata = { title: "404 · Neovarch Agent", robots: { index: false } };
+export const metadata: Metadata = { ...buildMetadata("id"), title: "404 · Neovarch Agent", robots: { index: false } };
 
 export default function GlobalNotFound() {
   return (

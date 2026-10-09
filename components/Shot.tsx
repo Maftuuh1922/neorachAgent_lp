@@ -21,7 +21,7 @@ export default function Shot({
   return (
     <figure className="shot reveal">
       <div
-        className={src.startsWith("/art/") ? "shot__art shot__art--dots" : "shot__art"}
+        className={src.startsWith("/art/") ? "shot__art shot__art--dots" : src.startsWith("/shots/") ? "shot__art shot__art--ui" : "shot__art"}
         role="img"
         aria-label={alt}
         style={{ backgroundImage: `url(${asset(src)})`, aspectRatio: `${width} / ${height}` }}

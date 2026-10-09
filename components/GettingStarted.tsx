@@ -21,16 +21,16 @@ const PLATFORMS: Platform[] = [
     primary: FILES.winSetup,
     alt: FILES.winZip,
     cmd: INSTALL_COMMANDS.Windows,
-    img: { src: "/shots/home.webp", width: 1200, height: 750 },
+    img: { src: "/shots/home.webp", width: 1440, height: 900 },
     id: {
       note: "Installer per pengguna, tanpa hak admin. Memasang ke %LOCALAPPDATA%\\Programs\\NeovarchAgent dan membuat perintah neovarch.",
-      alt: "Tangkapan layar layar awal Neovarch Agent desktop",
-      caption: "Layar awal desktop",
+      alt: "Tangkapan layar Neovarch Agent desktop bertema gelap: sesi chat dengan panel model dan kartu mini Kantor",
+      caption: "Desktop, tema gelap",
     },
     en: {
       note: "Per-user installer, no admin rights needed. Installs to %LOCALAPPDATA%\\Programs\\NeovarchAgent and adds the neovarch command.",
-      alt: "Screenshot of the Neovarch Agent desktop start screen",
-      caption: "Desktop start screen",
+      alt: "Screenshot of Neovarch Agent desktop in the dark theme: a chat session with the model panel and the mini Kantor card",
+      caption: "Desktop, dark theme",
     },
   },
   {
@@ -39,16 +39,16 @@ const PLATFORMS: Platform[] = [
     primary: FILES.appImage,
     alt: FILES.deb,
     cmd: INSTALL_COMMANDS.Linux,
-    img: { src: "/shots/chat-full.webp", width: 1200, height: 750 },
+    img: { src: "/shots/chat-full.webp", width: 1440, height: 900 },
     id: {
       note: "Butuh GTK 3, NSS, ALSA, dan libsecret. Installer satu baris memasang ke ~/.local/share/neovarch-agent dan menambah entri menu aplikasi.",
-      alt: "Tangkapan layar sesi chat Neovarch Agent desktop",
-      caption: "Sesi chat desktop",
+      alt: "Tangkapan layar Neovarch Agent desktop bertema terang: sesi chat dengan file yang sedang disunting",
+      caption: "Desktop, tema terang",
     },
     en: {
       note: "Requires GTK 3, NSS, ALSA, and libsecret. The one-line installer puts it in ~/.local/share/neovarch-agent and adds an app menu entry.",
-      alt: "Screenshot of a Neovarch Agent desktop chat session",
-      caption: "Desktop chat session",
+      alt: "Screenshot of Neovarch Agent desktop in the light theme: a chat session with a file being edited",
+      caption: "Desktop, light theme",
     },
   },
   {

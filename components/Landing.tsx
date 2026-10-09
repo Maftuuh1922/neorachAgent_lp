@@ -2,6 +2,7 @@ import type { Lang } from "@/lib/rootShell";
 import Navbar from "./Navbar";
 import Hero from "./Hero";
 import Features from "./Features";
+import Office from "./Office";
 import GettingStarted from "./GettingStarted";
 import License from "./License";
 import Footer from "./Footer";
@@ -14,6 +15,7 @@ export default function Landing({ lang }: { lang: Lang }) {
       <main>
         <Hero lang={lang} />
         <Features lang={lang} />
+        <Office lang={lang} />
         <GettingStarted lang={lang} />
         <License lang={lang} />
       </main>
