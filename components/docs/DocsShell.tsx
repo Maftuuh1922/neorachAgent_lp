@@ -165,7 +165,7 @@ export default function DocsShell({
         <div className="wrap dx-footer__row">
           <p className="dx-footer__name">Neovarch Agent {RELEASE_VERSION} · Dokumentasi</p>
           <nav className="dx-footer__links" aria-label="Tautan footer dokumentasi">
-            <a href={asset("/")}>Beranda</a>
+            <a href={asset("/id/")}>Beranda</a>
             <a href={RELEASE_URL} target="_blank" rel="noopener noreferrer">Rilis</a>
             <a href={ISSUES_URL} target="_blank" rel="noopener noreferrer">Laporkan masalah</a>
             <a href={APP_REPO_URL} target="_blank" rel="noopener noreferrer">GitHub</a>

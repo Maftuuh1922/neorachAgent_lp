@@ -10,17 +10,42 @@
 /* Burger menu (CSS-only toggle) */
 .nav__row { position: relative; }
 .nav__toggle { position: absolute; opacity: 0; pointer-events: none; width: 0; height: 0; }
+/* Star toggle (Y2K four-point sparkle). 44px hit area, no ring around it. */
 .nav__burger {
-  display: inline-flex; flex-direction: column; justify-content: center; gap: 5px;
-  width: 40px; height: 40px; margin-left: 18px; padding: 0 9px; cursor: pointer;
-  border: 1px solid currentColor; border-radius: 999px; color: var(--text, #111);
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; margin-left: 6px; padding: 0; cursor: pointer;
+  border-radius: 999px; color: #b0121a; -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation; user-select: none;
 }
-.nav__burger span { display: block; height: 2px; background: currentColor; border-radius: 2px;
-  transition: transform .25s ease, opacity .2s ease; }
-.nav__toggle:checked + .nav__burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav__toggle:checked + .nav__burger span:nth-child(2) { opacity: 0; }
-.nav__toggle:checked + .nav__burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-.nav__toggle:focus-visible + .nav__burger { outline: 2px solid #b0121a; outline-offset: 3px; }
+.nav__star { display: block; overflow: visible; }
+.nav__star-main {
+  transform-box: view-box; transform-origin: 24px 24px;
+  transition: transform .62s cubic-bezier(.34, 1.7, .5, 1);
+}
+.nav__star-spark {
+  transform-box: view-box; transform-origin: 39px 10px;
+  transition: transform .4s cubic-bezier(.34, 1.7, .5, 1), opacity .25s ease;
+}
+.nav__star-ring {
+  transform-box: view-box; transform-origin: 24px 24px;
+  opacity: 0; transform: scale(.4);
+  transition: opacity .3s ease, transform .5s cubic-bezier(.34, 1.56, .64, 1);
+}
+.nav__burger:active .nav__star-main { transform: scale(.86); transition-duration: .12s; }
+/* Open: twist 135deg (reads as a close mark), spring scale, spark tucks away, ring pulses in. */
+.nav__toggle:checked + .nav__burger .nav__star-main { transform: rotate(135deg) scale(1.08); }
+.nav__toggle:checked + .nav__burger .nav__star-spark { opacity: 0; transform: rotate(90deg) scale(0); }
+.nav__toggle:checked + .nav__burger .nav__star-ring { opacity: .9; transform: scale(1); animation: nv-star-pulse .55s ease-out; }
+@keyframes nv-star-pulse {
+  0% { transform: scale(.4); opacity: 0; }
+  55% { transform: scale(1.18); opacity: 1; }
+  100% { transform: scale(1); opacity: .9; }
+}
+.nav__burger:focus-visible { outline: 2px solid #b0121a; outline-offset: 2px; }
+.nav__burger:focus:not(:focus-visible) { outline: none; }
+@media (prefers-reduced-motion: reduce) {
+  .nav__star-main, .nav__star-spark, .nav__star-ring, .nav__menu { transition: none !important; animation: none !important; }
+}
 .nav__menu {
   position: absolute; right: 0; top: calc(100% + 10px); z-index: 50;
   display: flex; flex-direction: column; gap: 4px; min-width: 220px; padding: 12px;
@@ -39,8 +64,8 @@
 .nav__logo { display: block; width: 24px; height: 32px; }
 .nav__brand { color: #b0121a; }
 .nav .nav__logo { width: 28px; height: 28px; object-fit: cover; border-radius: 24%; flex: none; }
-.nav__name { display: block; width: auto; height: 34px; }
-@media (max-width: 480px) { .nav .nav__logo { width: 24px; height: 24px; } .nav__name { height: 24px; } }
+.nav__name { display: block; width: auto; height: 30px; }
+@media (max-width: 480px) { .nav .nav__logo { width: 24px; height: 24px; } .nav__name { height: 23px; } }
 @media (max-width: 360px) { .nav .nav__logo { width: 21px; height: 21px; } .nav__name { height: 20px; } }
 .nav__links a, .nav__menu a:not(.btn) { font-family: "Cinzel", serif; font-weight: 600; letter-spacing: .06em; }
 .nav__links a:not(.btn) { color: #b0121a; }
@@ -48,10 +73,15 @@
 .hero .title { color: #b0121a; }
 
 /* Burger only on small screens; desktop shows inline links */
-.nav__burger, .nav__menu { display: none; }
+.nav__burger, .nav__menu, .nav .nav__lang--bar { display: none; }
 @media (max-width: 720px) {
   .nav__burger { display: inline-flex; }
   .nav__menu { display: flex; }
+  /* Language switch stays in the bar on mobile, next to the star. */
+  .nav .nav__lang--bar { display: inline-flex; margin-left: auto; gap: 0; font-size: 12px; }
+  .nav .nav__lang--bar a { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; padding: 0 4px; }
+  .nav .nav__lang--bar .nav__lang-sep { margin: 0 -6px; }
+  .nav__row { gap: 8px; }
 }
 
 /* ID / EN language switch: same type as the nav links, current language underlined. */
@@ -60,6 +90,3 @@
 .nav .nav__lang a:hover { opacity: 1; }
 .nav .nav__lang a[aria-current] { opacity: 1; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
 .nav .nav__lang-sep { opacity: .4; }
-.nav .nav__menu .nav__lang--menu { padding: 6px 12px; gap: 10px; border-top: 1px solid rgba(176,18,24,.15); margin-top: 4px; padding-top: 12px; }
-.nav .nav__menu .nav__lang--menu a { padding: 4px 2px; border-radius: 0; color: #b0121a; }
-.nav .nav__menu .nav__lang--menu a:hover { background: none; }
