@@ -1,0 +1,49 @@
+# Neovarch Agent
+
+> Agen AI yang berjalan di PC (Windows, Linux) dengan core Python sendiri dan dikendalikan dari aplikasi Android lewat pairing QR. Dokumentasi berbahasa Indonesia, mengikuti rilis v1.4.5; fitur bertanda "segera hadir (v1.4.0)" belum dirilis.
+
+Kode sumber: https://github.com/Maftuuh1922/neovrach_Agent
+
+## Mulai
+
+- [Pengenalan](https://maftuuh1922.github.io/neorachAgent_lp/docs/mulai/pengenalan/): Apa itu Neovarch Agent, bagian-bagiannya, dan cara kerjanya.
+- [Instalasi](https://maftuuh1922.github.io/neorachAgent_lp/docs/mulai/instalasi/): Pasang di Windows, Linux, lewat npm, dan aplikasi Android.
+- [Quickstart](https://maftuuh1922.github.io/neorachAgent_lp/docs/mulai/quickstart/): Sesi pertama: pilih model, kirim perintah, setujui aksi.
+- [Dukungan platform](https://maftuuh1922.github.io/neorachAgent_lp/docs/mulai/dukungan-platform/): Sistem operasi, arsitektur, dan kebutuhan minimum.
+
+## Panduan
+
+- [Aplikasi desktop](https://maftuuh1922.github.io/neorachAgent_lp/docs/panduan/aplikasi-desktop/): Tata letak aplikasi desktop: rail, sesi, panel kanan, dan pengaturan.
+- [Android & pairing QR](https://maftuuh1922.github.io/neorachAgent_lp/docs/panduan/android-pairing/): Memasangkan HP dengan PC lewat QR di jaringan lokal.
+- [Provider & endpoint kustom](https://maftuuh1922.github.io/neorachAgent_lp/docs/panduan/provider-endpoint/): Menambah model: preset, endpoint OpenAI-compatible HTTP/HTTPS, header, TLS.
+- [Konfigurasi](https://maftuuh1922.github.io/neorachAgent_lp/docs/panduan/konfigurasi/): Folder ~/.neovarch, config.yaml, .env, SOUL.md, dan profil.
+- [Persetujuan & keamanan](https://maftuuh1922.github.io/neorachAgent_lp/docs/panduan/persetujuan-keamanan/): Kapan agen meminta izin, pilihan jawaban, dan batas keamanan.
+
+## Fitur
+
+- [Kanban](https://maftuuh1922.github.io/neorachAgent_lp/docs/fitur/kanban/): Papan tugas bersama untuk kamu dan agen, juga dari HP.
+- [Office](https://maftuuh1922.github.io/neorachAgent_lp/docs/fitur/office/): Agen sebagai pegawai: status, tugas, dan aktivitas langsung.
+- [Skills lokal](https://maftuuh1922.github.io/neorachAgent_lp/docs/fitur/skills/): Folder SKILL.md di ~/.neovarch/skills yang bisa dipakai agen.
+- [Memori](https://maftuuh1922.github.io/neorachAgent_lp/docs/fitur/memori/): Catatan memori jangka panjang di ~/.neovarch/memory.
+- [Cron & otomasi](https://maftuuh1922.github.io/neorachAgent_lp/docs/fitur/cron/): Tugas terjadwal: interval, harian, ekspresi cron, sekali jalan.
+- [Obsidian vault](https://maftuuh1922.github.io/neorachAgent_lp/docs/fitur/obsidian/): Vault Obsidian sebagai memori: cari, baca, tulis, backlink, graf.
+- [Tema & tampilan](https://maftuuh1922.github.io/neorachAgent_lp/docs/fitur/tema/): Warna aksen, mode gelap/terang, dan tema di HP.
+- [Notifikasi update](https://maftuuh1922.github.io/neorachAgent_lp/docs/fitur/notifikasi-update/): Cek rilis terbaru di GitHub dan banner 'Update tersedia'.
+- [Laporan riset & ekspor](https://maftuuh1922.github.io/neorachAgent_lp/docs/fitur/laporan-riset/): Laporan dengan referensi nyata, ekspor DOCX/PDF, dan pratinjau dokumen.
+
+## Developer
+
+- [Arsitektur](https://maftuuh1922.github.io/neorachAgent_lp/docs/developer/arsitektur/): Core Python, gateway, aplikasi desktop, dan remote HP.
+- [Tech stack](https://maftuuh1922.github.io/neorachAgent_lp/docs/developer/tech-stack/): Bahasa, framework, pustaka, dan alat build yang dipakai.
+- [Struktur repo](https://maftuuh1922.github.io/neorachAgent_lp/docs/developer/struktur-repo/): Isi tiap folder di repo aplikasi.
+- [Menjalankan dari source](https://maftuuh1922.github.io/neorachAgent_lp/docs/developer/dari-source/): Menjalankan core, desktop, dan aplikasi HP dari kode sumber.
+- [Testing](https://maftuuh1922.github.io/neorachAgent_lp/docs/developer/testing/): pytest, typecheck, sweep desktop, dan flutter test.
+- [Kontribusi](https://maftuuh1922.github.io/neorachAgent_lp/docs/developer/kontribusi/): Cara melaporkan masalah dan mengirim perubahan.
+
+## Referensi
+
+- [API core](https://maftuuh1922.github.io/neorachAgent_lp/docs/referensi/api-core/): Endpoint REST, WebSocket JSON-RPC, dan SSE dari neovarch serve.
+- [CLI](https://maftuuh1922.github.io/neorachAgent_lp/docs/referensi/cli/): Perintah neovarch dan opsinya.
+- [FAQ & troubleshooting](https://maftuuh1922.github.io/neorachAgent_lp/docs/referensi/faq/): Pertanyaan umum dan solusi masalah yang sering muncul.
+- [Changelog](https://maftuuh1922.github.io/neorachAgent_lp/docs/referensi/changelog/): Perubahan v1.3.0 dan rencana v1.4.0.
+- [Lisensi](https://maftuuh1922.github.io/neorachAgent_lp/docs/referensi/lisensi/): Lisensi MIT dan atribusi.
