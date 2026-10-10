@@ -7,7 +7,6 @@ const COPY = {
     title: "Kantor: agen-agenmu sebagai satu tim",
     intro:
       "Halaman Kantor menampilkan setiap agen yang berjalan di PC sebagai pegawai di ruang kantor 3D. Tiap agen punya meja dan persona sendiri, dengan nama, jabatan, status langsung, dan tiket yang sedang dikerjakan.",
-    soon: "Kantor dan Perusahaan hadir mulai versi 1.4.5.",
     points: [
       ["Meja dan persona", "Setiap agen duduk di mejanya dengan nama dan jabatan. Klik seorang agen untuk melihat tugasnya, mengganti model, membuka sesinya, atau memberi tugas baru."],
       ["Status langsung", "Bekerja, menunggu persetujuan, galat, atau santai terlihat dari warna di atas kepala agen. Aktivitas terbaru tampil di sampingnya."],
@@ -31,7 +30,6 @@ const COPY = {
     title: "Kantor: your agents as one team",
     intro:
       "The Kantor (Office) view shows every agent running on your PC as an employee in a 3D office. Each agent has its own desk and persona, with a name, a role, a live status, and the ticket it's working on.",
-    soon: "Kantor and Perusahaan arrive in version 1.4.5.",
     points: [
       ["Desks and personas", "Every agent sits at its own desk with a name and a role. Click an agent to see its task, switch its model, open its session, or hand it a new task."],
       ["Live status", "Working, waiting for approval, error, or idle shows as a color above each agent's head, with the latest activity alongside."],
@@ -60,7 +58,6 @@ export default function Office({ lang = "id" }: { lang?: Lang }) {
         <p className="label">{t.label}</p>
         <h2 id="kantor-title" className="title title--lg">{t.title}</h2>
         <p className="section__intro">{t.intro}</p>
-        <p className="office__soon">{t.soon}</p>
         <div className="office__desk">
           <Shot src="/shots/kantor-3d.webp" width={1440} height={900} alt={t.desk.alt} caption={t.desk.caption} />
         </div>

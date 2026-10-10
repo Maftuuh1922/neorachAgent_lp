@@ -53,9 +53,8 @@ const PLATFORMS: Platform[] = [
   },
   {
     os: "Android",
-    arch: "arm64",
-    primary: FILES.apkArm64,
-    alt: FILES.apkUniversal,
+    arch: "universal",
+    primary: FILES.apkUniversal,
     img: { src: "/shots/pairing-qr.webp", width: 1040, height: 310 },
     id: {
       note: "Remote untuk PC, tidak menjalankan agen sendiri. Pasang lewat sideload, lalu pindai QR dari Pengaturan ▸ Remote / Perangkat di PC.",
