@@ -48,7 +48,18 @@ export default function Navbar({ lang = "id" }: { lang?: Lang }) {
     <header className="nav">
       <div className="wrap nav__row">
         <a className="nav__brand" href={`${home}#top`}>
-          <img className="nav__logo" src={asset("/art/app-icon.webp")} alt="" width={100} height={100} aria-hidden="true" />
+          <picture className="nav__logo-pic">
+            <source type="image/webp" srcSet={`${asset("/art/mascot-logo-64.webp")} 1x, ${asset("/art/mascot-logo-128.webp")} 2x`} />
+            <img
+              className="nav__logo"
+              src={asset("/art/mascot-logo-64.png")}
+              srcSet={`${asset("/art/mascot-logo-128.png")} 2x`}
+              alt=""
+              width={64}
+              height={64}
+              aria-hidden="true"
+            />
+          </picture>
           <img className="nav__name" src={asset("/art/wordmark-nva.webp")} alt="Neovarch Agent" width={526} height={144} />
         </a>
         <nav className="nav__links" aria-label={t.main}>
