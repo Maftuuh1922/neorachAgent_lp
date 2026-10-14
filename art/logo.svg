@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 160" fill="none">
+  <g fill="#b0121a">
+    <!-- main blade-star: long lower spike -->
+    <path d="M64 6 C66 44 70 58 104 66 C70 72 66 86 64 154 C62 86 58 72 24 66 C58 58 62 44 64 6 Z"/>
+    <!-- small filled star upper-left -->
+    <path d="M34 22 C35 36 38 39 50 40 C38 41 35 44 34 58 C33 44 30 41 18 40 C30 39 33 36 34 22 Z"/>
+    <!-- tiny sparkle right -->
+    <path d="M96 30 C96.6 36 98 37.4 104 38 C98 38.6 96.6 40 96 46 C95.4 40 94 38.6 88 38 C94 37.4 95.4 36 96 30 Z"/>
+  </g>
+  <!-- thin orbit arcs -->
+  <path d="M10 92 C30 70 86 56 114 52" stroke="#b0121a" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M18 104 C44 92 92 84 112 74" stroke="#b0121a" stroke-width="1" stroke-linecap="round"/>
+  <!-- hooks on the long spike -->
+  <path d="M64 112 C54 112 50 120 54 126" stroke="#b0121a" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M64 112 C74 112 78 120 74 126" stroke="#b0121a" stroke-width="1.4" stroke-linecap="round"/>
+</svg>
